@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+	--color-seafoam: oklch(0.7841 0.0516 173.88);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-roca {
+	font-family: roca, sans-serif;
+}
+
+p,
+a,
+button {
+	font-family: instrument-sans-variable, sans-serif;
+}
+
+@layer base {
+	h1 {
+		@apply text-4xl font-bold;
+	}
+	h2 {
+		@apply text-3xl font-bold;
+	}
+	h3 {
+		@apply text-2xl font-semibold;
+	}
+	h4 {
+		@apply text-xl font-semibold;
+	}
+	h5 {
+		@apply text-lg font-medium;
+	}
+	h6 {
+		@apply text-base font-medium;
+	}
+
+	button {
+		@apply rounded-full py-1 px-3 cursor-pointer;
+	}
+}
