@@ -1,120 +1,9 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 import { href, Link } from "react-router";
-
-const NAV_LINKS = [
-	{ label: "About", href: href("/about") },
-	{ label: "FAQ", href: href("/frequently-asked-questions") },
-	{ label: "Contact", href: href("/contact") },
-];
-
-const SERVICE_ITEMS = [
-	{ label: "Colon Hydrotherapy", href: href("/services/colon-hydrotherapy") },
-	{ label: "Detox Wraps", href: href("/services/detox-wraps") },
-	{ label: "Ionic Foot Detox", href: href("/services/ionic-foot-detox") },
-];
-
-interface FourthLinkMenuProps {
-	variant: "popover" | "inline";
-	onNavigate?: () => void;
-}
-
-const FourthLinkMenu = ({ variant, onNavigate }: FourthLinkMenuProps) => {
-	const [isOpen, setIsOpen] = useState(false);
-	const [isMounted, setIsMounted] = useState(false);
-	const panelRef = useRef<HTMLDivElement>(null);
-
-	const open = () => {
-		setIsMounted(true);
-		setIsOpen(true);
-	};
-
-	const close = () => setIsOpen(false);
-
-	useGSAP(() => {
-		if (!panelRef.current) return;
-		if (isOpen) {
-			gsap.fromTo(
-				panelRef.current,
-				{ y: -12, opacity: 0 },
-				{ y: 0, opacity: 1, duration: 0.3, ease: "power2.out" },
-			);
-		} else if (isMounted) {
-			gsap.to(panelRef.current, {
-				y: -12,
-				opacity: 0,
-				duration: 0.3,
-				ease: "power2.in",
-				onComplete: () => setIsMounted(false),
-			});
-		}
-	}, [isOpen]);
-
-	return (
-		<div
-			className={variant === "popover" ? "relative" : "w-full"}
-			role="none"
-			tabIndex={-1}
-			onBlur={(event) => {
-				if (
-					variant === "popover" &&
-					!event.currentTarget.contains(event.relatedTarget)
-				) {
-					close();
-				}
-			}}
-		>
-			<button
-				type="button"
-				className="flex items-center hover:text-gray-900 cursor-pointer focus:outline-none"
-				onClick={() => (isOpen ? close() : open())}
-				aria-expanded={isOpen}
-			>
-				Services
-				<svg
-					fill="none"
-					stroke="currentColor"
-					strokeLinecap="round"
-					strokeLinejoin="round"
-					strokeWidth="2"
-					className={`w-4 h-4 ml-1 transition-transform ${
-						isOpen ? "rotate-180" : ""
-					}`}
-					viewBox="0 0 24 24"
-				>
-					<title>Dropdown Arrow</title>
-					<path d="M6 9l6 6 6-6"></path>
-				</svg>
-			</button>
-			{isMounted && (
-				<div
-					ref={panelRef}
-					className={
-						variant === "popover"
-							? "absolute left-0 top-full mt-2 flex flex-col items-start bg-white border border-gray-200 rounded shadow-md py-2 z-10 min-w-max"
-							: "flex flex-col items-start gap-y-3 mt-3 pl-4"
-					}
-				>
-					{SERVICE_ITEMS.map((item) => (
-						<Link
-							key={item.label}
-							to={item.href}
-							onClick={onNavigate}
-							className={
-								variant === "popover"
-									? "w-full text-left px-4 py-1 hover:text-gray-900 hover:bg-gray-100 cursor-pointer"
-									: "hover:text-gray-900 cursor-pointer"
-							}
-						>
-							{item.label}
-						</Link>
-					))}
-				</div>
-			)}
-		</div>
-	);
-};
+import { NAV_LINKS } from "@/config";
+import { gsap } from "@/lib/gsap";
+import { ServicesMenu } from "./ServicesMenu";
 
 export const MainNavigation = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -154,31 +43,25 @@ export const MainNavigation = () => {
 	}, [isMobileMenuOpen]);
 
 	return (
-		<header className="text-gray-600 body-font">
+		<header>
 			<div className="container mx-auto flex items-center justify-between px-3 py-5 md:px-5">
 				<Link
 					className="flex title-font font-medium items-center text-gray-900"
 					to={href("/")}
 				>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						stroke="currentColor"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-						strokeWidth="2"
-						className="w-10 h-10 text-seafoam p-2 rounded-full"
-						viewBox="0 0 24 24"
-					>
-						<title>App Icon</title>
-						<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-					</svg>
-					<span className="ml-3 text-xl font-roca">Waters of Wellness</span>
+					<img
+						src="/waters-of-wellness.svg"
+						alt="Waters of Wellness"
+						className="w-8 h-8"
+					/>
+					<span className="ml-3 text-xl font-roca leading-none">
+						Waters of Wellness
+					</span>
 				</Link>
 
 				<div className="hidden md:flex md:items-center">
 					<nav className="flex items-center text-base">
-						{NAV_LINKS.map((link) => (
+						{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map((link) => (
 							<Link
 								key={link.label}
 								className="mr-5 hover:text-gray-900 cursor-pointer"
@@ -188,7 +71,7 @@ export const MainNavigation = () => {
 							</Link>
 						))}
 						<div className="mr-5">
-							<FourthLinkMenu variant="popover" />
+							<ServicesMenu variant="popover" />
 						</div>
 					</nav>
 					<button
@@ -243,19 +126,11 @@ export const MainNavigation = () => {
 							to={href("/")}
 							onClick={closeMobileMenu}
 						>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								fill="none"
-								stroke="currentColor"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								className="w-10 h-10 text-gray-400 p-2 bg-gray-200 rounded-full"
-								viewBox="0 0 24 24"
-							>
-								<title>App Icon</title>
-								<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-							</svg>
+							<img
+								src="/waters-of-wellness.svg"
+								alt="Waters of Wellness"
+								className="w-10 h-10"
+							/>
 							<span className="ml-3 text-xl">Waters of Wellness</span>
 						</Link>
 						<button
@@ -280,7 +155,7 @@ export const MainNavigation = () => {
 					</div>
 
 					<nav className="flex flex-col items-start gap-y-6 text-lg mt-10">
-						{NAV_LINKS.map((link) => (
+						{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map((link) => (
 							<Link
 								key={link.label}
 								to={link.href}
@@ -290,7 +165,7 @@ export const MainNavigation = () => {
 								{link.label}
 							</Link>
 						))}
-						<FourthLinkMenu variant="inline" onNavigate={closeMobileMenu} />
+						<ServicesMenu variant="inline" onNavigate={closeMobileMenu} />
 						<button
 							className="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base"
 							type="button"
