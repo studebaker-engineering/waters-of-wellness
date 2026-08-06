@@ -6,6 +6,9 @@
 		"module": "esnext",
 		"types": ["vite/client"],
 		"rootDirs": [".", "./.react-router/types"],
+		"paths": {
+			"@/*": ["./app/*"]
+		},
 		"allowArbitraryExtensions": true,
 		"skipLibCheck": true,
 
