@@ -1,10 +1,6 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
-
-gsap.registerPlugin(SplitText, ScrollTrigger);
+import { gsap, SplitText } from "@/lib/gsap";
 
 interface PropTypes {
 	text: string;
