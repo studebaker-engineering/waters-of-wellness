@@ -30,7 +30,7 @@
 	--color-linen-100: oklch(0.965332 0.034375 76.1);
 	--color-linen-150: oklch(0.942383 0.059375 76.1);
 
-	--color-ink: oklch(0.1777 0.0094 53.06);
+	--color-ink: oklch(0.2165 0.0094 53.06);
 
 	/* Typography */
 	--font-roca: roca, sans-serif;
@@ -81,6 +81,6 @@
 
 	/* Elements */
 	button {
-		@apply rounded-full py-1 px-3 cursor-pointer font-semibold;
+		@apply rounded-full py-1 px-3 cursor-pointer;
 	}
 }
