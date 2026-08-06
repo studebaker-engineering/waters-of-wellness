@@ -4,15 +4,16 @@ export const MainFooter = () => {
 	return (
 		<footer className="bg-seafoam-100 text-gray-600 body-font">
 			<div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+				{/* Logo and title */}
 				<div className="w-64 shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
 					<Link
-						className="flex title-font font-medium items-center text-gray-900"
+						className="flex flex-col title-font font-medium items-center"
 						to={href("/")}
 					>
 						<img
 							src="/waters-of-wellness.svg"
 							alt="Waters of Wellness"
-							className="w-8 h-8"
+							className="w-30 h-30 mb-3"
 						/>
 						<span className="ml-3 text-lg font-roca leading-none">
 							Waters of Wellness
@@ -20,6 +21,7 @@ export const MainFooter = () => {
 					</Link>
 				</div>
 				<div className="grow flex flex-wrap md:pr-20 -mb-10 md:text-left text-center order-first">
+					{/* Contact */}
 					<div className="w-full px-4">
 						<h2 className="text-gray-900 mb-3 text-xl">Contact</h2>
 						<nav className="list-none mb-10 font-semibold text-sm">

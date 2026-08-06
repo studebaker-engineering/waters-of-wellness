@@ -1,15 +1,20 @@
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { SERVICE_LINKS } from "@/config";
 import { gsap } from "@/lib/gsap";
 
 interface ServicesMenuProps {
 	variant: "popover" | "inline";
 	onNavigate?: () => void;
+	isHome?: boolean;
 }
 
-export const ServicesMenu = ({ variant, onNavigate }: ServicesMenuProps) => {
+export const ServicesMenu = ({
+	variant,
+	onNavigate,
+	isHome = false,
+}: ServicesMenuProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 	const panelRef = useRef<HTMLDivElement>(null);
@@ -42,7 +47,7 @@ export const ServicesMenu = ({ variant, onNavigate }: ServicesMenuProps) => {
 
 	return (
 		<div
-			className={variant === "popover" ? "relative" : "w-full"}
+			className={variant === "popover" ? "relative" : ""}
 			role="none"
 			tabIndex={-1}
 			onBlur={(event) => {
@@ -56,7 +61,9 @@ export const ServicesMenu = ({ variant, onNavigate }: ServicesMenuProps) => {
 		>
 			<button
 				type="button"
-				className="flex items-center hover:text-gray-900 cursor-pointer focus:outline-none"
+				className={`flex items-center cursor-pointer focus:outline-none transition-hover px-0 ${
+					isHome ? "hover:text-seafoam-200" : "hover:text-gray-900"
+				}`}
 				onClick={() => (isOpen ? close() : open())}
 				aria-expanded={isOpen}
 			>
@@ -81,23 +88,28 @@ export const ServicesMenu = ({ variant, onNavigate }: ServicesMenuProps) => {
 					ref={panelRef}
 					className={
 						variant === "popover"
-							? "absolute left-0 top-full mt-2 flex flex-col items-start bg-white border border-gray-200 rounded shadow-md py-2 z-10 min-w-max"
-							: "flex flex-col items-start gap-y-3 mt-3 pl-4"
+							? "absolute left-0 top-full mt-2 flex flex-col items-start border border-seafoam-100 bg-seafoam-50/15 rounded shadow-md py-2 z-10 min-w-max"
+							: "flex flex-col items-start gap-y-3 mt-3"
 					}
 				>
 					{SERVICE_LINKS.map((item) => (
-						<Link
+						<NavLink
 							key={item.label}
+							end
 							to={item.href}
 							onClick={onNavigate}
-							className={
-								variant === "popover"
-									? "w-full text-left px-4 py-1 hover:text-gray-900 hover:bg-gray-100 cursor-pointer"
-									: "hover:text-gray-900 cursor-pointer"
+							className={({ isActive }) =>
+								`${
+									variant === "popover"
+										? "w-full text-left px-4 py-1 hover:text-seafoam-200"
+										: "hover:text-gray-900"
+								} cursor-pointer transition-hover ${
+									isActive ? "font-semibold" : ""
+								}`
 							}
 						>
 							{item.label}
-						</Link>
+						</NavLink>
 					))}
 				</div>
 			)}

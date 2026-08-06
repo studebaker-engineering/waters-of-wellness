@@ -2,17 +2,17 @@
 
 @theme {
 	/* Colors */
-	--color-seafoam-50: oklch(1 0 173.9);
-	--color-seafoam-100: oklch(0.97 0.03 173.9);
-	--color-seafoam-200: oklch(0.91 0.07 173.9);
-	--color-seafoam-300: oklch(0.83 0.13 173.9);
-	--color-seafoam-400: oklch(0.75 0.18 173.9);
-	--color-seafoam-500: oklch(0.71 0.17 173.9);
-	--color-seafoam-600: oklch(0.63 0.15 173.9);
-	--color-seafoam-700: oklch(0.55 0.13 173.9);
-	--color-seafoam-800: oklch(0.44 0.1 173.9);
-	--color-seafoam-900: oklch(0.33 0.08 173.9);
-	--color-seafoam-950: oklch(0.22 0.05 173.9);
+	--color-seafoam-50: oklch(0.9708 0.0075 164.94);
+	--color-seafoam-100: oklch(0.9322 0.0194 167.91);
+	--color-seafoam-200: oklch(0.91 0.07 167.91);
+	--color-seafoam-300: oklch(0.83 0.13 167.91);
+	--color-seafoam-400: oklch(0.75 0.18 167.91);
+	--color-seafoam-500: oklch(0.71 0.17 167.91);
+	--color-seafoam-600: oklch(0.63 0.15 167.91);
+	--color-seafoam-700: oklch(0.55 0.13 167.91);
+	--color-seafoam-800: oklch(0.44 0.1 167.91);
+	--color-seafoam-900: oklch(0.33 0.08 167.91);
+	--color-seafoam-950: oklch(0.22 0.05 167.91);
 
 	--color-tidewater-50: oklch(1 0 218.1);
 	--color-tidewater-100: oklch(0.97 0.03 218.1);
@@ -26,15 +26,19 @@
 	--color-tidewater-900: oklch(0.34 0.08 218.1);
 	--color-tidewater-950: oklch(0.23 0.05 218.1);
 
-	--color-linen-50: oklch(0.987305 0.0125 76.1);
-	--color-linen-100: oklch(0.965332 0.034375 76.1);
-	--color-linen-150: oklch(0.942383 0.059375 76.1);
+	--color-linen-50: oklch(0.987305 0.0125 103.15);
+	--color-linen-100: oklch(0.9584 0.0172 103.15);
+	--color-linen-150: oklch(0.942383 0.059375 103.15);
 
 	--color-ink: oklch(0.2165 0.0094 53.06);
 
 	/* Typography */
 	--font-roca: roca, sans-serif;
 	--font-instrument-sans: instrument-sans-variable, sans-serif;
+}
+
+@utility transition-hover {
+	@apply transition-colors duration-200 ease-out;
 }
 
 @layer base {
@@ -65,13 +69,13 @@
 	h4,
 	h5,
 	h6 {
-		@apply font-roca text-ink;
+		@apply font-roca;
 	}
 
 	p,
 	a,
 	button {
-		@apply font-instrument-sans text-ink;
+		@apply font-instrument-sans;
 	}
 
 	/* Base colors */

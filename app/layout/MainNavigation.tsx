@@ -1,11 +1,13 @@
 import { useGSAP } from "@gsap/react";
 import { useEffect, useRef, useState } from "react";
-import { href, Link } from "react-router";
+import { href, Link, NavLink, useLocation } from "react-router";
 import { NAV_LINKS } from "@/config";
 import { gsap } from "@/lib/gsap";
 import { ServicesMenu } from "./ServicesMenu";
 
 export const MainNavigation = () => {
+	const { pathname } = useLocation();
+	const isHome = pathname === href("/");
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isMobileMenuMounted, setIsMobileMenuMounted] = useState(false);
 	const mobileMenuRef = useRef<HTMLDivElement>(null);
@@ -43,10 +45,12 @@ export const MainNavigation = () => {
 	}, [isMobileMenuOpen]);
 
 	return (
-		<header>
-			<div className="container mx-auto flex items-center justify-between px-3 py-5 md:px-5">
+		<header className="relative z-10">
+			<div className="container mx-auto flex items-center justify-between px-3 py-5 md:px-5 z-10">
 				<Link
-					className="flex title-font font-medium items-center text-gray-900"
+					className={`flex title-font font-medium items-center ${
+						isHome ? "text-seafoam-50" : "text-gray-900"
+					}`}
 					to={href("/")}
 				>
 					<img
@@ -59,24 +63,35 @@ export const MainNavigation = () => {
 					</span>
 				</Link>
 
-				<div className="hidden md:flex md:items-center">
+				<div
+					className={`hidden md:flex md:items-center ${
+						isHome ? "text-seafoam-50" : "text-gray-900"
+					}`}
+				>
 					<nav className="flex items-center text-base">
 						{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map((link) => (
-							<Link
+							<NavLink
 								key={link.label}
-								className="mr-5 hover:text-gray-900 cursor-pointer"
+								end
+								className={({ isActive }) =>
+									`mr-5 cursor-pointer transition-hover ${
+										isActive ? "font-semibold" : ""
+									} ${isHome ? "hover:text-seafoam-200" : "hover:text-gray-900"}`
+								}
 								to={link.href}
 							>
 								{link.label}
-							</Link>
+							</NavLink>
 						))}
 						<div className="mr-5">
-							<ServicesMenu variant="popover" />
+							<ServicesMenu variant="popover" isHome={isHome} />
 						</div>
 					</nav>
-					<button
-						className="inline-flex items-center bg-gray-200 focus:outline-none hover:bg-gray-300 text-base"
-						type="button"
+					<a
+						href="https://watersofwellness.janeapp.com"
+						target="_blank"
+						rel="noopener"
+						className="inline-flex items-center bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-3 py-1 text-center transition-hover"
 					>
 						Book Now
 						<svg
@@ -91,12 +106,12 @@ export const MainNavigation = () => {
 							<title>Arrow Icon</title>
 							<path d="M5 12h14M12 5l7 7-7 7"></path>
 						</svg>
-					</button>
+					</a>
 				</div>
 
 				<button
 					type="button"
-					className="md:hidden flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-gray-200 rounded-full cursor-pointer"
+					className="md:hidden flex items-center justify-center w-10 h-10 text-seafoam-100 p-2 bg-seafoam-50/15 rounded-full cursor-pointer"
 					onClick={openMobileMenu}
 					aria-label="Open menu"
 				>
@@ -105,7 +120,7 @@ export const MainNavigation = () => {
 						stroke="currentColor"
 						strokeLinecap="round"
 						strokeLinejoin="round"
-						strokeWidth="2"
+						strokeWidth="1"
 						className="w-full h-full"
 						viewBox="0 0 24 24"
 					>
@@ -118,7 +133,7 @@ export const MainNavigation = () => {
 			{isMobileMenuMounted && (
 				<div
 					ref={mobileMenuRef}
-					className="fixed inset-0 z-50 bg-white flex flex-col px-3 py-5 md:hidden"
+					className="fixed inset-0 z-50 bg-linear-to-t from-seafoam-100/95 to-seafoam-100 flex flex-col px-3 py-5 md:hidden"
 				>
 					<div className="flex items-center justify-between">
 						<Link
@@ -129,13 +144,13 @@ export const MainNavigation = () => {
 							<img
 								src="/waters-of-wellness.svg"
 								alt="Waters of Wellness"
-								className="w-10 h-10"
+								className="w-8 h-8"
 							/>
-							<span className="ml-3 text-xl">Waters of Wellness</span>
+							<span className="ml-3 text-xl font-roca">Waters of Wellness</span>
 						</Link>
 						<button
 							type="button"
-							className="flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-gray-200 rounded-full cursor-pointer"
+							className="flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-seafoam-100/20 rounded-full cursor-pointer"
 							onClick={closeMobileMenu}
 							aria-label="Close menu"
 						>
@@ -144,7 +159,7 @@ export const MainNavigation = () => {
 								stroke="currentColor"
 								strokeLinecap="round"
 								strokeLinejoin="round"
-								strokeWidth="2"
+								strokeWidth="1"
 								className="w-full h-full"
 								viewBox="0 0 24 24"
 							>
@@ -156,34 +171,21 @@ export const MainNavigation = () => {
 
 					<nav className="flex flex-col items-start gap-y-6 text-lg mt-10">
 						{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map((link) => (
-							<Link
+							<NavLink
 								key={link.label}
+								end
 								to={link.href}
 								onClick={closeMobileMenu}
-								className="hover:text-gray-900 cursor-pointer"
+								className={({ isActive }) =>
+									`hover:text-gray-900 cursor-pointer transition-hover ${
+										isActive ? "font-semibold" : ""
+									}`
+								}
 							>
 								{link.label}
-							</Link>
+							</NavLink>
 						))}
 						<ServicesMenu variant="inline" onNavigate={closeMobileMenu} />
-						<button
-							className="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base"
-							type="button"
-						>
-							Button
-							<svg
-								fill="none"
-								stroke="currentColor"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="2"
-								className="w-4 h-4 ml-1"
-								viewBox="0 0 24 24"
-							>
-								<title>Arrow Icon</title>
-								<path d="M5 12h14M12 5l7 7-7 7"></path>
-							</svg>
-						</button>
 					</nav>
 				</div>
 			)}

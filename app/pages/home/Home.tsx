@@ -1,0 +1,71 @@
+import { Link } from "react-router";
+import shoreVideo from "@/assets/shore-video.mp4";
+import { EntranceText } from "@/components/EntranceText";
+
+export const Home = () => (
+	<>
+		<section className="relative z-0 -mt-24 flex h-[80vh] items-center overflow-hidden text-seafoam-50">
+			<video
+				className="absolute inset-0 h-full w-full object-cover"
+				src={shoreVideo}
+				autoPlay
+				loop
+				muted
+				playsInline
+			/>
+			<div className="absolute inset-0 bg-ink/20" />
+			<div className="container relative z-10 mx-auto p-5">
+				<h1 className="md:text-6xl">
+					Restore Your
+					<br />
+					Digestive Balance
+				</h1>
+				<p>
+					Baltimore Maryland's premier colon hydrotherapy experts.
+					<br />
+					Twenty years of practice, FDA Approved, and focused on your journey to
+					wellness.
+				</p>
+				<div className="mt-5 flex gap-3">
+					<a
+						href="https://watersofwellness.janeapp.com"
+						target="_blank"
+						rel="noopener"
+						className="bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-5 py-2 md:w-60 w-2/3 text-center transition-hover"
+					>
+						Book Now
+					</a>
+					<a
+						href="tel:4438005600"
+						target="_blank"
+						rel="noopener"
+						className="md:hidden border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 w-1/3 text-center transition-hover"
+					>
+						Call
+					</a>
+					{/* Non-mobile link  */}
+					<Link
+						to="/about"
+						className="hidden md:inline border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 min-w-40 text-center transition-hover"
+					>
+						How sessions work
+					</Link>
+				</div>
+			</div>
+		</section>
+
+		<div className="container p-5 pt-10 mx-auto">
+			<EntranceText text="Our Services" />
+
+			<EntranceText text="Meet Gina" />
+		</div>
+
+		<section className="bg-seafoam-50">
+			<div className="container p-5 pt-10 mx-auto">
+				<EntranceText text="Why Colon Hydrotherapy?" />
+			</div>
+		</section>
+	</>
+);
+
+export default Home;
