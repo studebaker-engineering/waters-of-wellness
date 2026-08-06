@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+	/* Colors */
 	--color-seafoam-50: oklch(1 0 173.9);
 	--color-seafoam-100: oklch(0.97 0.03 173.9);
 	--color-seafoam-200: oklch(0.91 0.07 173.9);
@@ -24,25 +25,20 @@
 	--color-tidewater-800: oklch(0.44 0.1 218.1);
 	--color-tidewater-900: oklch(0.34 0.08 218.1);
 	--color-tidewater-950: oklch(0.23 0.05 218.1);
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-roca {
-	font-family: roca, sans-serif;
-}
+	--color-linen-50: oklch(0.987305 0.0125 76.1);
+	--color-linen-100: oklch(0.965332 0.034375 76.1);
+	--color-linen-150: oklch(0.942383 0.059375 76.1);
 
-p,
-a,
-button {
-	font-family: instrument-sans-variable, sans-serif;
+	--color-ink: oklch(0.1777 0.0094 53.06);
+
+	/* Typography */
+	--font-roca: roca, sans-serif;
+	--font-instrument-sans: instrument-sans-variable, sans-serif;
 }
 
 @layer base {
+	/* Heading size and weight */
 	h1 {
 		@apply text-4xl font-bold;
 	}
@@ -62,7 +58,29 @@ button {
 		@apply text-base font-medium;
 	}
 
+	/* Font family */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-roca text-ink;
+	}
+
+	p,
+	a,
 	button {
-		@apply rounded-full py-1 px-3 cursor-pointer;
+		@apply font-instrument-sans text-ink;
+	}
+
+	/* Base colors */
+	body {
+		@apply bg-linen-50;
+	}
+
+	/* Elements */
+	button {
+		@apply rounded-full py-1 px-3 cursor-pointer font-semibold;
 	}
 }
