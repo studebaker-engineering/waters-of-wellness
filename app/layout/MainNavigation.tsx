@@ -1,17 +1,18 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { href, Link } from "react-router";
 
 const NAV_LINKS = [
-	{ label: "About", href: "/" },
-	{ label: "FAQ", href: "/" },
-	{ label: "Contact", href: "/" },
+	{ label: "About", href: href("/about") },
+	{ label: "FAQ", href: href("/frequently-asked-questions") },
+	{ label: "Contact", href: href("/contact") },
 ];
 
-const FOURTH_LINK_ITEMS = [
-	{ label: "Colon Hydrotherapy", href: "/" },
-	{ label: "Detox Wraps", href: "/" },
-	{ label: "Ionic Foot Detox", href: "/" },
+const SERVICE_ITEMS = [
+	{ label: "Colon Hydrotherapy", href: href("/services/colon-hydrotherapy") },
+	{ label: "Detox Wraps", href: href("/services/detox-wraps") },
+	{ label: "Ionic Foot Detox", href: href("/services/ionic-foot-detox") },
 ];
 
 interface FourthLinkMenuProps {
@@ -95,10 +96,10 @@ const FourthLinkMenu = ({ variant, onNavigate }: FourthLinkMenuProps) => {
 							: "flex flex-col items-start gap-y-3 mt-3 pl-4"
 					}
 				>
-					{FOURTH_LINK_ITEMS.map((item) => (
-						<a
+					{SERVICE_ITEMS.map((item) => (
+						<Link
 							key={item.label}
-							href={item.href}
+							to={item.href}
 							onClick={onNavigate}
 							className={
 								variant === "popover"
@@ -107,7 +108,7 @@ const FourthLinkMenu = ({ variant, onNavigate }: FourthLinkMenuProps) => {
 							}
 						>
 							{item.label}
-						</a>
+						</Link>
 					))}
 				</div>
 			)}
@@ -155,9 +156,9 @@ export const MainNavigation = () => {
 	return (
 		<header className="text-gray-600 body-font">
 			<div className="container mx-auto flex items-center justify-between px-3 py-5 md:px-5">
-				<a
+				<Link
 					className="flex title-font font-medium items-center text-gray-900"
-					href="/"
+					to={href("/")}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -173,18 +174,18 @@ export const MainNavigation = () => {
 						<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
 					</svg>
 					<span className="ml-3 text-xl font-roca">Waters of Wellness</span>
-				</a>
+				</Link>
 
 				<div className="hidden md:flex md:items-center">
 					<nav className="flex items-center text-base">
 						{NAV_LINKS.map((link) => (
-							<a
+							<Link
 								key={link.label}
 								className="mr-5 hover:text-gray-900 cursor-pointer"
-								href={link.href}
+								to={link.href}
 							>
 								{link.label}
-							</a>
+							</Link>
 						))}
 						<div className="mr-5">
 							<FourthLinkMenu variant="popover" />
@@ -237,9 +238,9 @@ export const MainNavigation = () => {
 					className="fixed inset-0 z-50 bg-white flex flex-col px-3 py-5 md:hidden"
 				>
 					<div className="flex items-center justify-between">
-						<a
+						<Link
 							className="flex title-font font-medium items-center text-gray-900"
-							href="/"
+							to={href("/")}
 							onClick={closeMobileMenu}
 						>
 							<svg
@@ -256,7 +257,7 @@ export const MainNavigation = () => {
 								<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
 							</svg>
 							<span className="ml-3 text-xl">Waters of Wellness</span>
-						</a>
+						</Link>
 						<button
 							type="button"
 							className="flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-gray-200 rounded-full cursor-pointer"
@@ -280,14 +281,14 @@ export const MainNavigation = () => {
 
 					<nav className="flex flex-col items-start gap-y-6 text-lg mt-10">
 						{NAV_LINKS.map((link) => (
-							<a
+							<Link
 								key={link.label}
-								href={link.href}
+								to={link.href}
 								onClick={closeMobileMenu}
 								className="hover:text-gray-900 cursor-pointer"
 							>
 								{link.label}
-							</a>
+							</Link>
 						))}
 						<FourthLinkMenu variant="inline" onNavigate={closeMobileMenu} />
 						<button
