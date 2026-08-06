@@ -3,17 +3,14 @@ import { Link } from "react-router";
 export const NotFound = () => (
 	<div className="container p-5 mx-auto">
 		<section>
-			<h1>Not Found</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-				commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-				velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-				occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-				mollit anim id est laborum.
+			<h1>Oops! Page not found.</h1>
+			<p className="mb-3">
+				Sorry, the page oyu are looking for could not be found.
 			</p>
-			<Link to="/">Home</Link>
+
+			<Link to="/" className="bg-seafoam-200 rounded-full px-3 py-1">
+				Take me home
+			</Link>
 		</section>
 	</div>
 );
