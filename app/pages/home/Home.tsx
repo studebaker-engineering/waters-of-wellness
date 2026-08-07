@@ -1,19 +1,46 @@
 import { Link } from "react-router";
-import shoreVideo from "@/assets/shore-video.mp4";
+import shoreHeroPoster from "@/assets/shore-hero-poster.jpg";
 import { EntranceText } from "@/components/EntranceText";
+import { heroVideoUrl } from "@/lib";
 
 export const Home = () => (
 	<>
 		<section className="relative z-0 -mt-24 flex h-[80vh] items-center overflow-hidden text-seafoam-50">
 			<video
 				className="absolute inset-0 h-full w-full object-cover"
-				src={shoreVideo}
+				poster={shoreHeroPoster}
 				autoPlay
 				loop
 				muted
 				playsInline
+			>
+				<source
+					src={heroVideoUrl("shore-hero-mobile.mp4")}
+					media="(max-width: 640px)"
+					type="video/mp4"
+				/>
+				<source
+					src={heroVideoUrl("shore-hero-480p.mp4")}
+					media="(max-width: 1024px)"
+					type="video/mp4"
+				/>
+				<source
+					src={heroVideoUrl("shore-hero-720p.mp4")}
+					media="(max-width: 1536px)"
+					type="video/mp4"
+				/>
+				<source
+					src={heroVideoUrl("shore-hero-1080p.mp4")}
+					media="(max-width: 1920px)"
+					type="video/mp4"
+				/>
+				<source src={heroVideoUrl("shore-hero-1440p.mp4")} type="video/mp4" />
+			</video>
+			{/* <div className="absolute inset-0 bg-gray-800/10" /> */}
+			<div
+				className="absolute inset-0 bg-noise animate-grain opacity-20 mix-blend-overlay pointer-events-none"
+				aria-hidden="true"
 			/>
-			<div className="absolute inset-0 bg-ink/20" />
 			<div className="container relative z-10 mx-auto p-5">
 				<h1 className="md:text-6xl">
 					Restore Your
