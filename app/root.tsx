@@ -37,3 +37,15 @@ export default function App() {
 		</>
 	);
 }
+
+export function HydrateFallback() {
+	return (
+		<div className="flex flex-1 items-center justify-center min-h-screen bg-seafoam-100">
+			<img
+				src="/waters-of-wellness.svg"
+				alt="Waters of Wellness"
+				className="w-16 h-16 animate-pulse"
+			/>
+		</div>
+	);
+}
