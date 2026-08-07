@@ -2,6 +2,7 @@ import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import "./app.css";
 import { MainFooter } from "./layout/MainFooter";
 import { MainNavigation } from "./layout/MainNavigation";
+import { MEDIA_ORIGIN } from "./lib";
 
 export function Layout({ children }: { children: React.ReactNode }) {
 	return (
@@ -11,6 +12,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<link rel="icon" type="image/svg+xml" href="/waters-of-wellness.svg" />
 				<link rel="stylesheet" href="https://use.typekit.net/cqn0cvy.css" />
+				<link rel="preconnect" href={MEDIA_ORIGIN} crossOrigin="anonymous" />
 				<title>Waters of Wellness</title>
 				<Meta />
 				<Links />

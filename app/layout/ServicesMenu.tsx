@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { NavLink } from "react-router";
 import { SERVICE_LINKS } from "@/config";
-import { gsap } from "@/lib/gsap";
+import { gsap, navItemHoverClass, navLinkClassName } from "@/lib";
 
 interface ServicesMenuProps {
 	variant: "popover" | "inline";
@@ -18,6 +18,18 @@ export const ServicesMenu = ({
 	const [isOpen, setIsOpen] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 	const panelRef = useRef<HTMLDivElement>(null);
+
+	const isPopover = variant === "popover";
+
+	const panelClass = isPopover
+		? `absolute left-0 top-full mt-2 flex flex-col items-start ${
+				isHome ? "bg-seafoam-50/15" : "bg-seafoam-100"
+			} rounded shadow-md py-2 z-10 min-w-max`
+		: "flex flex-col items-start gap-y-3 mt-3";
+
+	const itemBaseClass = isPopover
+		? `w-full text-left px-4 py-1 ${navItemHoverClass(isHome)}`
+		: navItemHoverClass(isHome);
 
 	const open = () => {
 		setIsMounted(true);
@@ -47,23 +59,18 @@ export const ServicesMenu = ({
 
 	return (
 		<div
-			className={variant === "popover" ? "relative" : ""}
+			className={isPopover ? "relative" : ""}
 			role="none"
 			tabIndex={-1}
 			onBlur={(event) => {
-				if (
-					variant === "popover" &&
-					!event.currentTarget.contains(event.relatedTarget)
-				) {
+				if (isPopover && !event.currentTarget.contains(event.relatedTarget)) {
 					close();
 				}
 			}}
 		>
 			<button
 				type="button"
-				className={`flex items-center cursor-pointer focus:outline-none transition-hover px-0 ${
-					isHome ? "hover:text-seafoam-200" : "hover:text-gray-900"
-				}`}
+				className={`flex items-center focus:outline-none px-0 ${navItemHoverClass(isHome)}`}
 				onClick={() => (isOpen ? close() : open())}
 				aria-expanded={isOpen}
 			>
@@ -84,14 +91,7 @@ export const ServicesMenu = ({
 				</svg>
 			</button>
 			{isMounted && (
-				<div
-					ref={panelRef}
-					className={
-						variant === "popover"
-							? `absolute left-0 top-full mt-2 flex flex-col items-start border ${isHome ? "border-seafoam-100 bg-seafoam-50/15" : "bg-seafoam-100"} rounded shadow-md py-2 z-10 min-w-max`
-							: "flex flex-col items-start gap-y-3 mt-3"
-					}
-				>
+				<div ref={panelRef} className={panelClass}>
 					{SERVICE_LINKS.map((item) => (
 						<NavLink
 							key={item.label}
@@ -99,13 +99,7 @@ export const ServicesMenu = ({
 							to={item.href}
 							onClick={onNavigate}
 							className={({ isActive }) =>
-								`${
-									variant === "popover"
-										? `w-full text-left px-4 py-1 ${isHome ? "hover:text-seafoam-200" : "hover:text-gray-900"} `
-										: "hover:text-gray-900"
-								} cursor-pointer transition-hover ${
-									isActive ? "font-semibold" : ""
-								}`
+								navLinkClassName(isActive, itemBaseClass)
 							}
 						>
 							{item.label}

@@ -1,6 +1,6 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import { gsap, SplitText } from "@/lib/gsap";
+import { gsap, SplitText } from "@/lib";
 
 interface PropTypes {
 	text: string;
