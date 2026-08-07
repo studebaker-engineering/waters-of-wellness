@@ -88,7 +88,7 @@ export const ServicesMenu = ({
 					ref={panelRef}
 					className={
 						variant === "popover"
-							? "absolute left-0 top-full mt-2 flex flex-col items-start border border-seafoam-100 bg-seafoam-50/15 rounded shadow-md py-2 z-10 min-w-max"
+							? `absolute left-0 top-full mt-2 flex flex-col items-start border ${isHome ? "border-seafoam-100 bg-seafoam-50/15" : "bg-seafoam-100"} rounded shadow-md py-2 z-10 min-w-max`
 							: "flex flex-col items-start gap-y-3 mt-3"
 					}
 				>
@@ -101,7 +101,7 @@ export const ServicesMenu = ({
 							className={({ isActive }) =>
 								`${
 									variant === "popover"
-										? "w-full text-left px-4 py-1 hover:text-seafoam-200"
+										? `w-full text-left px-4 py-1 ${isHome ? "hover:text-seafoam-200" : "hover:text-gray-900"} `
 										: "hover:text-gray-900"
 								} cursor-pointer transition-hover ${
 									isActive ? "font-semibold" : ""

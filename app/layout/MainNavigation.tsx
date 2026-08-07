@@ -133,60 +133,77 @@ export const MainNavigation = () => {
 			{isMobileMenuMounted && (
 				<div
 					ref={mobileMenuRef}
-					className="fixed inset-0 z-50 bg-linear-to-t from-seafoam-100/95 to-seafoam-100 flex flex-col px-3 py-5 md:hidden"
+					className="fixed inset-0 z-50 bg-seafoam-100 flex flex-col justify-between px-3 py-5 md:hidden"
 				>
-					<div className="flex items-center justify-between">
-						<Link
-							className="flex title-font font-medium items-center text-gray-900"
-							to={href("/")}
-							onClick={closeMobileMenu}
-						>
+					{/* Links */}
+					<div>
+						<div className="flex items-center justify-between">
+							<Link
+								className="flex title-font font-medium items-center text-gray-900"
+								to={href("/")}
+								onClick={closeMobileMenu}
+							>
+								<img
+									src="/waters-of-wellness.svg"
+									alt="Waters of Wellness"
+									className="w-8 h-8"
+								/>
+								<span className="ml-3 text-xl font-roca">
+									Waters of Wellness
+								</span>
+							</Link>
+							<button
+								type="button"
+								className="flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-seafoam-100/20 rounded-full cursor-pointer"
+								onClick={closeMobileMenu}
+								aria-label="Close menu"
+							>
+								<svg
+									fill="none"
+									stroke="currentColor"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									strokeWidth="1"
+									className="w-full h-full"
+									viewBox="0 0 24 24"
+								>
+									<title>Close Icon</title>
+									<path d="M6 6l12 12M18 6L6 18"></path>
+								</svg>
+							</button>
+						</div>
+
+						<nav className="flex flex-col items-start gap-y-6 text-lg mt-10">
+							{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map(
+								(link) => (
+									<NavLink
+										key={link.label}
+										end
+										to={link.href}
+										onClick={closeMobileMenu}
+										className={({ isActive }) =>
+											`hover:text-gray-900 cursor-pointer transition-hover ${
+												isActive ? "font-semibold" : ""
+											}`
+										}
+									>
+										{link.label}
+									</NavLink>
+								),
+							)}
+							<ServicesMenu variant="inline" onNavigate={closeMobileMenu} />
+						</nav>
+					</div>
+					{/* Logo */}
+					<div className="flex justify-center">
+						<Link className="" to={href("/")}>
 							<img
 								src="/waters-of-wellness.svg"
 								alt="Waters of Wellness"
-								className="w-8 h-8"
+								className="w-30 h-30 mb-3"
 							/>
-							<span className="ml-3 text-xl font-roca">Waters of Wellness</span>
 						</Link>
-						<button
-							type="button"
-							className="flex items-center justify-center w-10 h-10 text-gray-400 p-2 bg-seafoam-100/20 rounded-full cursor-pointer"
-							onClick={closeMobileMenu}
-							aria-label="Close menu"
-						>
-							<svg
-								fill="none"
-								stroke="currentColor"
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth="1"
-								className="w-full h-full"
-								viewBox="0 0 24 24"
-							>
-								<title>Close Icon</title>
-								<path d="M6 6l12 12M18 6L6 18"></path>
-							</svg>
-						</button>
 					</div>
-
-					<nav className="flex flex-col items-start gap-y-6 text-lg mt-10">
-						{NAV_LINKS.sort((a, b) => a.sortOrder - b.sortOrder).map((link) => (
-							<NavLink
-								key={link.label}
-								end
-								to={link.href}
-								onClick={closeMobileMenu}
-								className={({ isActive }) =>
-									`hover:text-gray-900 cursor-pointer transition-hover ${
-										isActive ? "font-semibold" : ""
-									}`
-								}
-							>
-								{link.label}
-							</NavLink>
-						))}
-						<ServicesMenu variant="inline" onNavigate={closeMobileMenu} />
-					</nav>
 				</div>
 			)}
 		</header>
