@@ -4,6 +4,7 @@ import type { IconConfig } from "@/types";
 interface BaseIconProps extends IconConfig {
 	title: string;
 	children: ReactNode;
+	viewBox?: string;
 }
 
 export const ICON_DEFAULTS: Required<IconConfig> = {
@@ -16,11 +17,12 @@ export const BaseIcon = ({
 	tailwindFillColorClass = ICON_DEFAULTS.tailwindFillColorClass,
 	title,
 	children,
+	viewBox = "0 0 24 24",
 }: BaseIconProps) => (
 	<svg
 		width={size}
 		height={size}
-		viewBox="0 0 24 24"
+		viewBox={viewBox}
 		fill="none"
 		xmlns="http://www.w3.org/2000/svg"
 		className={tailwindFillColorClass}
