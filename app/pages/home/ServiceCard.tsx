@@ -7,25 +7,39 @@ export const ServiceCard = ({
 	children,
 	icon,
 	to,
+	duration,
+	price,
 }: ServiceCardConfig) => (
 	<Link
 		to={to}
-		className="group h-full bg-linen-100 hover:bg-linen-150 transition-colors rounded-lg p-3 flex justify-between items-center gap-3"
+		className="group h-full bg-linen-100 hover:bg-linen-150 transition-colors rounded-lg p-3 flex flex-col gap-3"
 	>
-		{/* Icon and text */}
-		<div className="flex items-center gap-3">
-			<div className="w-12 h-12 aspect-square bg-seafoam-100 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
-				{icon}
+		<div className="flex justify-between items-center gap-3">
+			{/* Icon and text */}
+			<div className="flex items-center gap-3">
+				<div className="w-12 h-12 aspect-square bg-seafoam-100 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+					{icon}
+				</div>
+				<div>
+					<h3 className="text-base font-medium capitalize">{title}</h3>
+					<p className="text-sm">{children}</p>
+				</div>
 			</div>
-			<div>
-				<h3 className="text-base font-medium capitalize">{title}</h3>
-				<p className="text-sm">{children}</p>
+
+			{/* Angle link */}
+			<div className="transition-transform group-hover:translate-x-1">
+				<AngleRightIcon size={24} tailwindFillColorClass="fill-black" />
 			</div>
 		</div>
 
-		{/* Angle link */}
-		<div className="transition-transform group-hover:translate-x-1">
-			<AngleRightIcon size={24} tailwindFillColorClass="fill-black" />
+		<div className="mt-auto flex flex-col gap-3">
+			<hr className="border-seafoam-100" />
+
+			{/* Duration and price */}
+			<div className="flex justify-between items-center text-sm">
+				<span>{duration}</span>
+				<span className="font-medium">${price}</span>
+			</div>
 		</div>
 	</Link>
 );
