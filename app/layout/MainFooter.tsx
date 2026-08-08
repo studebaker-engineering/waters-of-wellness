@@ -4,10 +4,7 @@ import { NAV_LINKS, SERVICE_LINKS } from "@/config";
 
 export const MainFooter = () => {
 	return (
-		<footer
-			className="body-font text-gray-900"
-			style={{ backgroundColor: "#b8b69a" }}
-		>
+		<footer className="body-font text-gray-900 bg-moss">
 			<div className="container mx-auto pt-8 pb-12 px-5">
 				{/* Logo and title */}
 				<Link

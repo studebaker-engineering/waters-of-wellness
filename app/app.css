@@ -43,6 +43,8 @@
 
 	--color-ink: oklch(0.2165 0.0094 53.06);
 
+	--color-moss: oklch(0.7704 0.0386 103.9);
+
 	/* Typography */
 	--font-roca: roca, sans-serif;
 	--font-instrument-sans: instrument-sans-variable, sans-serif;
