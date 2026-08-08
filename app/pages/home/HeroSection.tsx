@@ -36,7 +36,7 @@ export const HeroSection = () => (
 		</video>
 		{/* <div className="absolute inset-0 bg-gray-800/10" /> */}
 		<div
-			className="absolute inset-0 bg-noise animate-grain opacity-20 mix-blend-overlay pointer-events-none"
+			className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"
 			aria-hidden="true"
 		/>
 		<div className="container relative z-10 mx-auto p-5">
