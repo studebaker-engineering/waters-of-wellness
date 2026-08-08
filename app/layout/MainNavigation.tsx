@@ -1,5 +1,5 @@
 import { href, Link, NavLink, useLocation } from "react-router";
-import { ArrowRightIcon } from "@/components/icons";
+import { ArrowRightIcon, WatersOfWellnessIcon } from "@/components/icons";
 import { NAV_LINKS } from "@/config";
 import { navItemHoverClass, navLinkClassName } from "@/lib";
 import { MobileMenu } from "./MobileMenu";
@@ -18,11 +18,7 @@ export const MainNavigation = () => {
 					className={`flex title-font font-medium items-center ${textColorClass}`}
 					to={href("/")}
 				>
-					<img
-						src="/waters-of-wellness.svg"
-						alt="Waters of Wellness"
-						className="w-8 h-8"
-					/>
+					<WatersOfWellnessIcon tailwindFillColorClass="fill-seafoam-200" />
 					<span className="ml-3 text-xl font-roca leading-none">
 						Waters of Wellness
 					</span>
