@@ -30,5 +30,9 @@ export const EntranceText = ({ text }: PropTypes) => {
 		{ scope: textRef },
 	);
 
-	return <h2 ref={textRef}>{text}</h2>;
+	return (
+		<h2 ref={textRef} className="md:text-3xl text-2xl">
+			{text}
+		</h2>
+	);
 };
