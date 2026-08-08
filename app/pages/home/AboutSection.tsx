@@ -8,15 +8,15 @@ export const AboutSection = () => (
 	<section className="mb-10">
 		<EntranceText text="Meet Gina" />
 		<div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:items-start mt-2">
-			<div className="col-span-2 flex gap-3">
-				<div className="w-1/2">
+			<div className="col-span-2 bg-linen-100 rounded-lg p-3 lg:py-5 flex flex-col lg:flex-row gap-3">
+				<div className="w-full lg:w-1/2">
 					<img
 						src={gina}
 						alt="Gina R. Cunningham"
-						className="h-full w-full object-cover rounded-lg"
+						className="w-full aspect-4/3 lg:aspect-auto lg:h-full object-cover rounded-lg"
 					/>
 				</div>
-				<div className="w-1/2 bg-linen-100 rounded-lg p-3 flex flex-col justify-center gap-2">
+				<div className="w-full lg:w-1/2 flex flex-col gap-2">
 					<p className="font-semibold">
 						At Waters of Wellness, Gina is dedicated to guiding you on your
 						journey to wellness.
@@ -37,6 +37,24 @@ export const AboutSection = () => (
 							<ArrowRightIcon size={16} tailwindFillColorClass="text-ink" />
 						</span>
 					</Link>
+					<div className="mt-auto flex gap-3 pt-3">
+						<div>
+							<p className="text-xs font-medium uppercase tracking-wide opacity-60">
+								Accredited
+							</p>
+							<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+								FDA Approved
+							</span>
+						</div>
+						<div>
+							<p className="text-xs font-medium uppercase tracking-wide opacity-60">
+								In practice
+							</p>
+							<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+								Since 2005
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className="col-span-2 flex flex-col gap-3">
