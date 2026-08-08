@@ -8,7 +8,7 @@ export const ServiceCard = ({
 	icon,
 	to,
 	duration,
-	price,
+	badge,
 }: ServiceCardConfig) => (
 	<Link
 		to={to}
@@ -38,7 +38,9 @@ export const ServiceCard = ({
 			{/* Duration and price */}
 			<div className="flex justify-between items-center text-sm">
 				<span>{duration}</span>
-				<span className="font-medium">${price}</span>
+				<span className="bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+					{badge}
+				</span>
 			</div>
 		</div>
 	</Link>

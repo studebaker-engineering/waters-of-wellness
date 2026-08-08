@@ -9,8 +9,8 @@ export const TestimonialCard = ({
 	reviewerName,
 	children,
 }: TestimonialCardProps) => (
-	<div className="group bg-seafoam-50 hover:bg-tidewater-100 transition-colors rounded-lg p-3 justify-between flex flex-col last:mt-3">
+	<div className="group bg-seafoam-50 hover:bg-tidewater-100 transition-colors rounded-lg p-3 justify-between flex flex-col">
 		<p className="font-roca font-extralight">&quot;{children}&quot;</p>
-		<p className="text-sm mt-2">&ndash; {reviewerName}</p>
+		<p className="text-sm mt-2 font-medium">&ndash; {reviewerName}</p>
 	</div>
 );

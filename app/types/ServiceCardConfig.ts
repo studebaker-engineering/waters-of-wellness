@@ -6,6 +6,6 @@ export interface ServiceCardConfig {
 	children: ReactNode;
 	icon: ReactNode;
 	to: LinkItem["href"];
-	price: number;
+	badge: string;
 	duration: string;
 }
