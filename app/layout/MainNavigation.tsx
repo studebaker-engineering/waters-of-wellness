@@ -1,4 +1,5 @@
 import { href, Link, NavLink, useLocation } from "react-router";
+import { ArrowRightIcon } from "@/components/icons";
 import { NAV_LINKS } from "@/config";
 import { navItemHoverClass, navLinkClassName } from "@/lib";
 import { MobileMenu } from "./MobileMenu";
@@ -55,18 +56,7 @@ export const MainNavigation = () => {
 						className="inline-flex items-center bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-3 py-1 text-center transition-hover"
 					>
 						Book Now
-						<svg
-							fill="none"
-							stroke="currentColor"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth="2"
-							className="w-4 h-4 ml-1"
-							viewBox="0 0 24 24"
-						>
-							<title>Arrow Icon</title>
-							<path d="M5 12h14M12 5l7 7-7 7"></path>
-						</svg>
+						<ArrowRightIcon size={16} tailwindFillColorClass="ml-1" />
 					</a>
 				</div>
 

@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import gina from "@/assets/gina.jpeg";
 import { EntranceText } from "@/components/EntranceText";
+import { ArrowRightIcon } from "@/components/icons";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const AboutSection = () => (
@@ -27,16 +28,13 @@ export const AboutSection = () => (
 					</p>
 					<Link
 						to="/about"
-						className="group inline-flex items-center gap-1 text-sm font-medium transition-hover hover:text-tidewater-600 mt-1"
+						className="group inline-flex items-center gap-1 text-sm font-medium transition-hover mt-1 hover:font-semibold"
 					>
 						<span className="underline underline-offset-2">
 							Learn more about Gina
 						</span>
-						<span
-							aria-hidden="true"
-							className="transition-transform group-hover:translate-x-1"
-						>
-							&rarr;
+						<span className="transition-transform group-hover:translate-x-1">
+							<ArrowRightIcon size={16} tailwindFillColorClass="text-ink" />
 						</span>
 					</Link>
 				</div>
