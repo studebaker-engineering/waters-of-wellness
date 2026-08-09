@@ -4,14 +4,14 @@
 	/* Colors */
 	--color-seafoam-50: oklch(0.9708 0.0075 164.94);
 	--color-seafoam-100: oklch(0.9322 0.0194 167.91);
-	--color-seafoam-200: oklch(0.91 0.07 167.91);
-	--color-seafoam-300: oklch(0.83 0.13 167.91);
+	--color-seafoam-200: oklch(0.87 0.045 167.91);
+	--color-seafoam-300: oklch(0.79 0.07 167.91);
 	--color-seafoam-400: oklch(0.75 0.18 167.91);
 	--color-seafoam-500: oklch(0.71 0.17 167.91);
 	--color-seafoam-600: oklch(0.63 0.15 167.91);
 	--color-seafoam-700: oklch(0.55 0.13 167.91);
 	--color-seafoam-800: oklch(0.44 0.1 167.91);
-	--color-seafoam-900: oklch(0.33 0.08 167.91);
+	--color-seafoam-900: oklch(0.19 0.03 167.91);
 	--color-seafoam-950: oklch(0.22 0.05 167.91);
 
 	--color-tidewater-50: oklch(1 0 218.1);
