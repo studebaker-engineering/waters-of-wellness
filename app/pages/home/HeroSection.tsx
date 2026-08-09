@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
 import shoreHeroPoster from "@/assets/shore-hero-poster.jpg";
-import { heroVideoUrl } from "@/lib";
+import { heroVideoUrl, PHONE_HREF } from "@/lib";
 
 export const HeroSection = () => {
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -90,7 +90,7 @@ export const HeroSection = () => {
 						Book Now
 					</a>
 					<a
-						href="tel:4438005600"
+						href={PHONE_HREF}
 						target="_blank"
 						rel="noopener"
 						className="md:hidden border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 w-1/3 text-center transition-hover"

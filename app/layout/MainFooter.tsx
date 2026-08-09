@@ -1,6 +1,7 @@
 import { href, Link } from "react-router";
 import { WatersOfWellnessIcon } from "@/components/icons";
 import { NAV_LINKS, SERVICE_LINKS } from "@/config";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib";
 
 export const MainFooter = () => {
 	return (
@@ -27,8 +28,8 @@ export const MainFooter = () => {
 							<nav className="list-none font-semibold text-sm">
 								<ul>
 									<li>
-										<a href="tel:4438005600" target="_blank" rel="noopener">
-											443-800-5600
+										<a href={PHONE_HREF} target="_blank" rel="noopener">
+											{PHONE_DISPLAY}
 										</a>
 									</li>
 									<li className="mt-3">

@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import dockPhoto from "@/assets/dock-photo.jpg";
 import { EntranceText } from "@/components/EntranceText";
-import { gsap } from "@/lib";
+import { gsap, PHONE_HREF } from "@/lib";
 import { FactCard } from "./FactCard";
 
 export const WhySection = () => {
@@ -85,9 +85,17 @@ export const WhySection = () => {
 					href="https://watersofwellness.janeapp.com"
 					target="_blank"
 					rel="noopener"
-					className="bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10"
+					className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10"
 				>
 					Book now
+				</a>
+				<a
+					href={PHONE_HREF}
+					target="_blank"
+					rel="noopener"
+					className="lg:hidden bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover"
+				>
+					Call now
 				</a>
 			</div>
 		</section>
