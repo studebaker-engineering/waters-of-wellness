@@ -13,7 +13,9 @@ export const FactCard = ({
 	tailwindBgColorClass,
 	className = "",
 }: FactCardProps) => (
-	<div className={`rounded-lg p-3 lg:p-5 ${tailwindBgColorClass} ${className}`}>
+	<div
+		className={`fact-card rounded-lg p-3 lg:p-5 transition-transform duration-300 ease-out hover:-translate-y-1 ${tailwindBgColorClass} ${className}`}
+	>
 		<h3 className="text-lg font-medium">{title}</h3>
 		<p className="text-sm mt-1">{children}</p>
 	</div>
