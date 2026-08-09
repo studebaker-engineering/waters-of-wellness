@@ -11,11 +11,11 @@
 	--color-seafoam-600: oklch(0.63 0.15 167.91);
 	--color-seafoam-700: oklch(0.55 0.13 167.91);
 	--color-seafoam-800: oklch(0.44 0.1 167.91);
-	--color-seafoam-900: oklch(0.19 0.03 167.91);
+	--color-seafoam-900: oklch(0.2 0.08 167.91);
 	--color-seafoam-950: oklch(0.22 0.05 167.91);
 
 	--color-tidewater-50: oklch(1 0 218.1);
-	--color-tidewater-100: oklch(0.97 0.03 218.1);
+	--color-tidewater-100: oklch(0.95 0.01 168.1);
 	--color-tidewater-200: oklch(0.7466 0.0472 223.39);
 	--color-tidewater-300: oklch(0.84 0.13 218.1);
 	--color-tidewater-400: oklch(0.76 0.18 218.1);
@@ -30,20 +30,11 @@
 	--color-linen-100: oklch(0.9584 0.0172 103.15);
 	--color-linen-150: oklch(0.9424 0.0349 103.15);
 
-	--color-ochre-50: oklch(97.6% 0.015 77.1);
-	--color-ochre-100: oklch(93.7% 0.038 80);
-	--color-ochre-200: oklch(87.9% 0.07 80.9);
-	--color-ochre-300: oklch(80.6% 0.101 78.8);
-	--color-ochre-400: oklch(72.5% 0.117 75);
-	--color-ochre-500: oklch(57.2% 0.113 66.5);
-	--color-ochre-600: oklch(50.3% 0.099 65.6);
-	--color-ochre-700: oklch(42.6% 0.082 64.9);
-	--color-ochre-800: oklch(34.3% 0.064 65);
-	--color-ochre-900: oklch(26.2% 0.045 67.4);
-
 	--color-ink: oklch(0.2165 0.0094 53.06);
 
 	--color-moss: oklch(0.7704 0.0386 103.9);
+
+	--color-stone: oklch(0.6268 0 0);
 
 	/* Typography */
 	--font-roca: roca, sans-serif;
@@ -65,7 +56,7 @@
 		@apply text-4xl font-bold;
 	}
 	h2 {
-		@apply text-3xl font-bold;
+		@apply text-3xl font-medium;
 	}
 	h3 {
 		@apply text-2xl font-semibold;

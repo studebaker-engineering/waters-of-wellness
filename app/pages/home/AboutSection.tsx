@@ -8,7 +8,7 @@ export const AboutSection = () => (
 	<section className="mb-10">
 		<EntranceText text="Meet Gina" />
 		<div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:items-start mt-2">
-			<div className="col-span-2 bg-seafoam-100 rounded-lg p-3 lg:py-5 flex flex-col lg:flex-row gap-3">
+			<div className="col-span-2 bg-seafoam-50 rounded-lg p-3 lg:py-5 flex flex-col lg:flex-row gap-3">
 				<div className="w-full lg:w-1/2">
 					<img
 						src={gina}
@@ -42,7 +42,7 @@ export const AboutSection = () => (
 							<p className="text-xs font-medium uppercase tracking-wide opacity-60">
 								Accredited
 							</p>
-							<span className="inline-block mt-1 bg-seafoam-50 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+							<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
 								FDA Approved
 							</span>
 						</div>
@@ -50,7 +50,7 @@ export const AboutSection = () => (
 							<p className="text-xs font-medium uppercase tracking-wide opacity-60">
 								In practice
 							</p>
-							<span className="inline-block mt-1 bg-seafoam-50 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+							<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
 								Since 2005
 							</span>
 						</div>
