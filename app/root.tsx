@@ -1,10 +1,46 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+	Links,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+	useLocation,
+} from "react-router";
+import type { Route } from "./+types/root";
 import "./app.css";
 import { MainFooter } from "./layout/MainFooter";
 import { MainNavigation } from "./layout/MainNavigation";
-import { MEDIA_ORIGIN } from "./lib";
+import {
+	MEDIA_ORIGIN,
+	OG_IMAGE_URL,
+	SITE_DESCRIPTION,
+	SITE_NAME,
+	SITE_TITLE,
+	SITE_URL,
+} from "./lib";
+
+export const meta: Route.MetaFunction = ({ location }) => [
+	{ title: SITE_TITLE },
+	{ name: "description", content: SITE_DESCRIPTION },
+	{ property: "og:type", content: "website" },
+	{ property: "og:site_name", content: SITE_NAME },
+	{ property: "og:url", content: `${SITE_URL}${location.pathname}` },
+	{ property: "og:title", content: SITE_TITLE },
+	{ property: "og:description", content: SITE_DESCRIPTION },
+	{ property: "og:image", content: OG_IMAGE_URL },
+	{ property: "og:image:width", content: "1200" },
+	{ property: "og:image:height", content: "630" },
+	{ property: "og:image:alt", content: SITE_NAME },
+	{ property: "og:locale", content: "en_US" },
+	{ name: "twitter:card", content: "summary_large_image" },
+	{ name: "twitter:title", content: SITE_TITLE },
+	{ name: "twitter:description", content: SITE_DESCRIPTION },
+	{ name: "twitter:image", content: OG_IMAGE_URL },
+];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+	const location = useLocation();
+
 	return (
 		<html lang="en">
 			<head>
@@ -32,11 +68,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 				<meta name="theme-color" content="#ffffff" />
+				<link rel="canonical" href={`${SITE_URL}${location.pathname}`} />
 
 				<link rel="stylesheet" href="https://use.typekit.net/cqn0cvy.css" />
 				<link rel="preconnect" href={MEDIA_ORIGIN} crossOrigin="anonymous" />
 
-				<title>Waters of Wellness</title>
 				<Meta />
 				<Links />
 			</head>
