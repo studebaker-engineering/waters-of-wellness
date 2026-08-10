@@ -1,12 +1,12 @@
 import {
 	Links,
 	Meta,
+	type MetaFunction,
 	Outlet,
 	Scripts,
 	ScrollRestoration,
 	useLocation,
 } from "react-router";
-import type { Route } from "./+types/root";
 import "./app.css";
 import { MainFooter } from "./layout/MainFooter";
 import { MainNavigation } from "./layout/MainNavigation";
@@ -19,7 +19,7 @@ import {
 	SITE_URL,
 } from "./lib";
 
-export const meta: Route.MetaFunction = ({ location }) => [
+export const meta: MetaFunction = ({ location }) => [
 	{ title: SITE_TITLE },
 	{ name: "description", content: SITE_DESCRIPTION },
 	{ property: "og:type", content: "website" },
