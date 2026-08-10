@@ -22,7 +22,7 @@ export const HeroSection = () => {
 	}, []);
 
 	return (
-		<section className="relative z-0 -mt-24 flex h-[80vh] items-center overflow-hidden text-seafoam-50">
+		<section className="relative z-0 -mt-24 flex h-[70vh] lg:h-[80vh] items-center overflow-hidden text-seafoam-50">
 			<img
 				src={shoreHeroPoster}
 				alt=""
