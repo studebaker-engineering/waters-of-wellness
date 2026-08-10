@@ -1,8 +1,7 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import dockPhoto from "@/assets/dock-photo.jpg";
 import { EntranceText } from "@/components/EntranceText";
-import { gsap, PHONE_HREF } from "@/lib";
+import { dockPhotoSrcSet, dockPhotoUrl, gsap, PHONE_HREF } from "@/lib";
 import { FactCard } from "./FactCard";
 
 export const WhySection = () => {
@@ -34,7 +33,9 @@ export const WhySection = () => {
 			<div className="mt-2 flex flex-col-reverse gap-6 lg:flex-row lg:items-center">
 				<div className="w-full lg:w-1/2">
 					<img
-						src={dockPhoto}
+						src={dockPhotoUrl(1200)}
+						srcSet={dockPhotoSrcSet}
+						sizes="(min-width: 1024px) 50vw, 100vw"
 						alt="Dock overlooking the water by Mick Kirchman"
 						className="w-full aspect-4/3 object-cover rounded-lg"
 					/>

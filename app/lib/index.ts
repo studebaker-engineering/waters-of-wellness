@@ -1,9 +1,11 @@
 import { PHONE_DISPLAY, PHONE_HREF, PHONE_NUMBER } from "./contact";
 import { gsap, ScrollTrigger, SplitText } from "./gsap";
-import { heroVideoUrl, MEDIA_ORIGIN } from "./media";
+import { dockPhotoSrcSet, dockPhotoUrl, heroVideoUrl, MEDIA_ORIGIN } from "./media";
 import { navItemHoverClass, navLinkClassName } from "./navLinkClassName";
 
 export {
+	dockPhotoSrcSet,
+	dockPhotoUrl,
 	gsap,
 	heroVideoUrl,
 	MEDIA_ORIGIN,
