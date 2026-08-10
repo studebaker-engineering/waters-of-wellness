@@ -29,7 +29,7 @@ export const WhySection = () => {
 
 	return (
 		<section className="mb-10">
-			<EntranceText text="Why Colon Hydrotherapy?" />
+			<EntranceText>Why Colon Hydrotherapy?</EntranceText>
 			<div className="mt-2 flex flex-col-reverse gap-6 lg:flex-row lg:items-center">
 				<div className="w-full lg:w-1/2">
 					<img
@@ -76,7 +76,9 @@ export const WhySection = () => {
 
 			<div className="mt-5 bg-linen-100 text-ink rounded-lg p-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:p-8">
 				<div>
-					<h3 className="text-2xl font-bold">Start with a call</h3>
+					<EntranceText as="h3" className="text-2xl font-bold">
+						Start with a call
+					</EntranceText>
 					<p className="text-sm mt-2">
 						Reach out to rejuvenate your body and spirit at our Baltimore
 						sanctuary where wellness and tranquility meet.

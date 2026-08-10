@@ -13,6 +13,7 @@ export const ServiceCard = ({
 	<Link
 		to={to}
 		className="group h-full bg-linen-100 hover:bg-linen-150 transition-colors rounded-lg p-3 flex flex-col gap-3"
+		viewTransition
 	>
 		<div className="flex justify-between items-center gap-3">
 			{/* Icon and text */}

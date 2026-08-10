@@ -6,7 +6,7 @@ import { TestimonialCard } from "./TestimonialCard";
 
 export const AboutSection = () => (
 	<section className="mb-10">
-		<EntranceText text="Meet Gina" />
+		<EntranceText>Meet Gina</EntranceText>
 		<div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:items-start mt-2">
 			<div className="col-span-2 bg-seafoam-50 rounded-lg p-3 lg:py-5 flex flex-col lg:flex-row gap-3">
 				<div className="w-full lg:w-1/2">
@@ -29,6 +29,7 @@ export const AboutSection = () => (
 					<Link
 						to="/about"
 						className="group inline-flex items-center gap-1 text-sm font-medium transition-hover mt-1 hover:font-semibold"
+						viewTransition
 					>
 						<span className="underline underline-offset-2">
 							Learn more about Gina
