@@ -42,28 +42,28 @@ export const HeroSection = () => {
 				onPlaying={() => setIsPlaying(true)}
 			>
 				<source
-					src={heroVideoUrl("shore-hero-mobile.mp4")}
+					src={heroVideoUrl("shore-hero-540p.mp4")}
 					media="(max-width: 640px)"
 					type="video/mp4"
 				/>
 				<source
-					src={heroVideoUrl("shore-hero-480p.mp4")}
+					src={heroVideoUrl("shore-hero-720p.mp4")}
 					media="(max-width: 1024px)"
 					type="video/mp4"
 				/>
 				<source
-					src={heroVideoUrl("shore-hero-720p.mp4")}
+					src={heroVideoUrl("shore-hero-1080p.mp4")}
 					media="(max-width: 1536px)"
 					type="video/mp4"
 				/>
 				<source
-					src={heroVideoUrl("shore-hero-1080p.mp4")}
-					media="(max-width: 1920px)"
+					src={heroVideoUrl("shore-hero-1440p.mp4")}
+					media="(max-width: 2560px)"
 					type="video/mp4"
 				/>
-				<source src={heroVideoUrl("shore-hero-1440p.mp4")} type="video/mp4" />
+				<source src={heroVideoUrl("shore-hero-2160p.mp4")} type="video/mp4" />
 			</video>
-			{/* <div className="absolute inset-0 bg-gray-800/10" /> */}
+			<div className="absolute inset-0 bg-gray-800/10" />
 			<div
 				className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"
 				aria-hidden="true"
