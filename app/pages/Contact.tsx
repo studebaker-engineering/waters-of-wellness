@@ -1,7 +1,11 @@
+import { EntranceText } from "@/components/EntranceText";
+
 export const Contact = () => (
 	<div className="container p-5 mx-auto">
 		<section>
-			<h1>Contact</h1>
+			<EntranceText as="h1" className="text-4xl">
+				Let's get in touch
+			</EntranceText>
 			<p>
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

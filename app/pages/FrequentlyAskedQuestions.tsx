@@ -26,7 +26,7 @@ export const FrequentlyAskedQuestions = () => (
 			]}
 		/>
 		<div className="container p-5 mx-auto">
-			<section className="max-w-2xl mx-auto">
+			<section className="mx-auto">
 				<RevealSection id="getting-started" title="What is colon hydrotherapy?">
 					<p>{LOREM}</p>
 				</RevealSection>

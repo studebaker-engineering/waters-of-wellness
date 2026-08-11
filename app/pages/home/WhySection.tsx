@@ -1,7 +1,8 @@
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
+import { BookingBanner } from "@/components/BookingBanner";
 import { EntranceText } from "@/components/EntranceText";
-import { dockPhotoSrcSet, dockPhotoUrl, gsap, PHONE_HREF } from "@/lib";
+import { dockPhotoSrcSet, dockPhotoUrl, gsap } from "@/lib";
 import { FactCard } from "./FactCard";
 
 export const WhySection = () => {
@@ -74,33 +75,10 @@ export const WhySection = () => {
 				</div>
 			</div>
 
-			<div className="mt-5 bg-linen-100 text-ink rounded-lg p-5 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between lg:p-8">
-				<div>
-					<EntranceText as="h3" className="text-2xl font-bold">
-						Start with a call
-					</EntranceText>
-					<p className="text-sm mt-2">
-						Reach out to rejuvenate your body and spirit at our Baltimore
-						sanctuary where wellness and tranquility meet.
-					</p>
-				</div>
-				<a
-					href="https://watersofwellness.janeapp.com"
-					target="_blank"
-					rel="noopener"
-					className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10"
-				>
-					Book now
-				</a>
-				<a
-					href={PHONE_HREF}
-					target="_blank"
-					rel="noopener"
-					className="lg:hidden bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover"
-				>
-					Call now
-				</a>
-			</div>
+			<BookingBanner title="Start with a call" className="mt-5">
+				Reach out to rejuvenate your body and spirit at our Baltimore sanctuary
+				where wellness and tranquility meet.
+			</BookingBanner>
 		</section>
 	);
 };
