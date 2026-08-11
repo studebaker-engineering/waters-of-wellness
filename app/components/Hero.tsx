@@ -22,6 +22,7 @@ interface HeroProps {
 	cta?: ReactNode;
 	links?: HeroLink[];
 	size?: "large" | "default";
+	hasScrollIndicator?: boolean;
 }
 
 const SIZE_CLASSES: Record<NonNullable<HeroProps["size"]>, string> = {
@@ -52,6 +53,7 @@ export const Hero = ({
 	cta,
 	links,
 	size = "default",
+	hasScrollIndicator = true,
 }: HeroProps) => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -109,7 +111,7 @@ export const Hero = ({
 					aria-hidden="true"
 				/>
 			)}
-			<div className="absolute inset-0 bg-gray-800/20" />
+			<div className="absolute inset-0 bg-gray-800/25" />
 			<div
 				className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"
 				aria-hidden="true"
@@ -135,7 +137,7 @@ export const Hero = ({
 					</div>
 				)}
 			</div>
-			{size === "default" && (
+			{hasScrollIndicator && size === "default" && (
 				<button
 					type="button"
 					onClick={scrollToContent}
