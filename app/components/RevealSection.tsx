@@ -9,7 +9,7 @@ interface RevealSectionProps {
 export const RevealSection = ({ id, title, children }: RevealSectionProps) => (
 	<details id={id} className="group border-b border-seafoam-200 py-5">
 		<summary className="flex cursor-pointer list-none items-center justify-between transition-hover hover:text-gray-600 [&::-webkit-details-marker]:hidden">
-			<h2>{title}</h2>
+			<h2 className="text-2xl lg:text-3xl">{title}</h2>
 			<svg
 				fill="none"
 				stroke="currentColor"

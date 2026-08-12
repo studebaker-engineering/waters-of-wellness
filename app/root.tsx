@@ -76,8 +76,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Meta />
 				<Links />
 			</head>
-			<body className="min-h-screen flex flex-col">
-				{children}
+			<body className="min-h-screen flex flex-col bg-seafoam-100">
+				<main className="bg-linen-50">{children}</main>
 				<ScrollRestoration />
 				<Scripts />
 			</body>

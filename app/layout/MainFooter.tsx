@@ -1,7 +1,7 @@
 import { href, Link } from "react-router";
 import { WatersOfWellnessIcon } from "@/components/icons";
 import { NAV_LINKS, SERVICE_LINKS } from "@/config";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib";
+import { BOOKING_LINK, PHONE_DISPLAY, PHONE_HREF } from "@/lib";
 
 export const MainFooter = () => {
 	return (
@@ -108,7 +108,7 @@ export const MainFooter = () => {
 							Ready to feel better?
 						</p>
 						<a
-							href="https://watersofwellness.janeapp.com"
+							href={BOOKING_LINK}
 							target="_blank"
 							rel="noopener"
 							className="font-roca text-4xl md:text-5xl transition-hover hover:text-gray-700"

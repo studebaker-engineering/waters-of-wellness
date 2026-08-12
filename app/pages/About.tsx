@@ -31,7 +31,7 @@ export const About = () => (
 			]}
 		/>
 
-		<div className="container px-5 pt-10 mx-auto">
+		<div className="container p-5 mx-auto">
 			<section id="story" className="mb-10">
 				<EntranceText>Gina's Story</EntranceText>
 				<div className="mt-2 grid gap-3 lg:grid-cols-2 lg:items-start">

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import shoreHeroPoster from "@/assets/shore-hero-poster.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
-import { heroVideoUrl, PHONE_HREF } from "@/lib";
+import { BOOKING_LINK, heroVideoUrl, PHONE_HREF } from "@/lib";
 
 export const HeroSection = () => (
 	<Hero
@@ -48,10 +48,10 @@ export const HeroSection = () => (
 		cta={
 			<>
 				<a
-					href="https://watersofwellness.janeapp.com"
+					href={BOOKING_LINK}
 					target="_blank"
 					rel="noopener"
-					className="bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-5 py-2 md:w-60 w-2/3 text-center transition-hover"
+					className="bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-5 py-2 md:w-60 w-2/3 text-center transition-hover font-medium"
 				>
 					Book Now
 				</a>
@@ -59,14 +59,14 @@ export const HeroSection = () => (
 					href={PHONE_HREF}
 					target="_blank"
 					rel="noopener"
-					className="md:hidden border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 w-1/3 text-center transition-hover"
+					className="md:hidden border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 w-1/3 text-center transition-hover font-medium"
 				>
 					Call
 				</a>
 				{/* Non-mobile link  */}
 				<Link
 					to="/about"
-					className="hidden md:inline border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 min-w-40 text-center transition-hover"
+					className="hidden md:inline border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 min-w-40 text-center transition-hover font-medium"
 					viewTransition
 				>
 					How sessions work

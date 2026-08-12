@@ -22,7 +22,10 @@ export const EntranceText = ({
 		() => {
 			if (!textRef.current) return;
 
-			const split = new SplitText(textRef.current, { type: "chars" });
+			const split = new SplitText(textRef.current, {
+				type: "words, chars",
+				wordsClass: "inline-block whitespace-nowrap",
+			});
 
 			gsap.from(split.chars, {
 				opacity: 0,
