@@ -8,7 +8,11 @@ export const NotFound = () => (
 				Sorry, the page oyu are looking for could not be found.
 			</p>
 
-			<Link to="/" className="bg-seafoam-200 rounded-full px-3 py-1">
+			<Link
+				to="/"
+				className="bg-seafoam-200 rounded-full px-3 py-1"
+				viewTransition
+			>
 				Take me home
 			</Link>
 		</section>

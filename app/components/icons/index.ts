@@ -1,4 +1,5 @@
 import { AngleRightIcon } from "./AngleRightIcon";
+import { ArrowDownIcon } from "./ArrowDownIcon";
 import { ArrowRightIcon } from "./ArrowRightIcon";
 import { LotusIcon } from "./LotusIcon";
 import { MeditationIcon } from "./MeditationIcon";
@@ -7,6 +8,7 @@ import { WatersOfWellnessIcon } from "./WatersOfWellnessIcon";
 
 export {
 	AngleRightIcon,
+	ArrowDownIcon,
 	ArrowRightIcon,
 	LotusIcon,
 	MeditationIcon,

@@ -50,6 +50,47 @@
 	background-size: 120px 120px;
 }
 
+@utility animate-soft-bounce {
+	animation: soft-bounce 5s ease-in-out infinite;
+}
+
+@keyframes soft-bounce {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(6px);
+	}
+}
+
+/* Subtle cross-fade between pages, driven by the native View Transitions
+   API (opted into per-navigation via the `viewTransition` prop on Link/
+   NavLink). The browser default blends old/new snapshots with
+   mix-blend-mode: plus-lighter, which washes out full-bleed hero photos
+   as they overlap mid-fade — force a normal blend so it's a clean dissolve. */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 0.35s;
+	animation-timing-function: ease-out;
+	mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+	z-index: 0;
+}
+
+::view-transition-new(root) {
+	z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	::view-transition-old(root),
+	::view-transition-new(root) {
+		animation: none;
+	}
+}
+
 @layer base {
 	/* Heading size and weight */
 	h1 {

@@ -11,6 +11,7 @@ export const MainFooter = () => {
 				<Link
 					className="inline-flex items-center gap-2 title-font font-medium mb-8"
 					to={href("/")}
+					viewTransition
 				>
 					<WatersOfWellnessIcon tailwindFillColorClass="fill-gray-900" />
 					<span className="text-lg font-roca leading-none">
@@ -65,6 +66,7 @@ export const MainFooter = () => {
 												<Link
 													className="transition-hover hover:text-gray-700"
 													to={link.href}
+													viewTransition
 												>
 													{link.label}
 												</Link>
@@ -88,6 +90,7 @@ export const MainFooter = () => {
 												<Link
 													className="transition-hover hover:text-gray-700"
 													to={link.href}
+													viewTransition
 												>
 													{link.label}
 												</Link>

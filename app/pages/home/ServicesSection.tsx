@@ -7,7 +7,7 @@ const [colonHydrotherapy, detoxWraps, ionicFootDetox] = SERVICE_LINKS;
 
 export const ServicesSection = () => (
 	<section className="mb-10">
-		<EntranceText text="Our Services" />
+		<EntranceText>Our Services</EntranceText>
 		<div className="grid gap-3 lg:grid-cols-3 mt-2">
 			<ServiceCard
 				title="Cleansing colon hydrotherapy"

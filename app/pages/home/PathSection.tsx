@@ -3,7 +3,7 @@ import { StepCard } from "./StepCard";
 
 export const PathSection = () => (
 	<section className="mb-10">
-		<EntranceText text="The Path to Wellness" />
+		<EntranceText>The Path to Wellness</EntranceText>
 		<p className="text-sm opacity-70 mt-2">This is our simple process.</p>
 
 		<div className="relative mt-8 grid gap-8 lg:grid-cols-3 lg:gap-6">

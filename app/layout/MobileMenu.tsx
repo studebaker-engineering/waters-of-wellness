@@ -76,6 +76,7 @@ export const MobileMenu = () => {
 								className="flex title-font font-medium items-center text-gray-900"
 								to={href("/")}
 								onClick={closeMobileMenu}
+								viewTransition
 							>
 								<img
 									src="/waters-of-wellness.svg"
@@ -118,6 +119,7 @@ export const MobileMenu = () => {
 										className={({ isActive }) =>
 											navLinkClassName(isActive, navItemHoverClass(false))
 										}
+										viewTransition
 									>
 										{link.label}
 									</NavLink>
@@ -128,7 +130,7 @@ export const MobileMenu = () => {
 					</div>
 					{/* Logo */}
 					<div className="flex justify-center">
-						<Link className="" to={href("/")}>
+						<Link className="" to={href("/")} viewTransition>
 							<img
 								src="/waters-of-wellness.svg"
 								alt="Waters of Wellness"

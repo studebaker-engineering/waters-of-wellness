@@ -1,22 +1,24 @@
 import { href, Link, NavLink, useLocation } from "react-router";
 import { ArrowRightIcon, WatersOfWellnessIcon } from "@/components/icons";
-import { NAV_LINKS } from "@/config";
+import { HERO_ROUTES, NAV_LINKS } from "@/config";
 import { navItemHoverClass, navLinkClassName } from "@/lib";
 import { MobileMenu } from "./MobileMenu";
 import { ServicesMenu } from "./ServicesMenu";
 
 export const MainNavigation = () => {
 	const { pathname } = useLocation();
-	const isHome = pathname === href("/");
+	const hasHero = HERO_ROUTES.includes(pathname);
 
-	const textColorClass = isHome ? "text-seafoam-50" : "text-gray-900";
+	const textColorClass = hasHero ? "text-seafoam-50" : "text-gray-900";
+	const positionClass = hasHero ? "absolute inset-x-0 top-0" : "relative";
 
 	return (
-		<header className="relative z-10">
+		<header className={`${positionClass} z-10`}>
 			<div className="container mx-auto flex items-center justify-between px-3 py-5 md:px-5 z-10">
 				<Link
 					className={`flex title-font font-medium items-center ${textColorClass}`}
 					to={href("/")}
+					viewTransition
 				>
 					<WatersOfWellnessIcon tailwindFillColorClass="fill-seafoam-200" />
 					<span className="ml-3 text-xl font-roca leading-none">
@@ -33,16 +35,17 @@ export const MainNavigation = () => {
 								className={({ isActive }) =>
 									navLinkClassName(
 										isActive,
-										`mr-5 ${navItemHoverClass(isHome)}`,
+										`mr-5 ${navItemHoverClass(hasHero)}`,
 									)
 								}
 								to={link.href}
+								viewTransition
 							>
 								{link.label}
 							</NavLink>
 						))}
 						<div className="mr-5">
-							<ServicesMenu variant="popover" isHome={isHome} />
+							<ServicesMenu variant="popover" isHome={hasHero} />
 						</div>
 					</nav>
 					<a

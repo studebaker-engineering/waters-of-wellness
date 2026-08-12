@@ -23,7 +23,7 @@ export const ServicesMenu = ({
 
 	const panelClass = isPopover
 		? `absolute left-0 top-full mt-2 flex flex-col items-start ${
-				isHome ? "bg-seafoam-50/15" : "bg-seafoam-100"
+				isHome ? "bg-seafoam-50/25" : "bg-seafoam-100"
 			} rounded shadow-md py-2 z-10 min-w-max`
 		: "flex flex-col items-start gap-y-3 mt-3";
 
@@ -101,6 +101,7 @@ export const ServicesMenu = ({
 							className={({ isActive }) =>
 								navLinkClassName(isActive, itemBaseClass)
 							}
+							viewTransition
 						>
 							{item.label}
 						</NavLink>
