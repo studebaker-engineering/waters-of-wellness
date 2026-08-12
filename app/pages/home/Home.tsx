@@ -8,7 +8,7 @@ export const Home = () => (
 	<>
 		<HeroSection />
 
-		<div className="container px-5 pt-10 mx-auto">
+		<div className="container p-5 mx-auto">
 			<ServicesSection />
 
 			<AboutSection />

@@ -84,7 +84,7 @@ export const Hero = ({
 	return (
 		<section
 			ref={sectionRef}
-			className={`relative z-0 flex overflow-hidden text-seafoam-50 ${SIZE_CLASSES[size]}`}
+			className={`relative z-0 flex overflow-hidden text-seafoam-50 ${SIZE_CLASSES[size]} mb-5`}
 		>
 			{media.type === "video" ? (
 				<video

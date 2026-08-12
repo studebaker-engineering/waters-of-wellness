@@ -18,9 +18,9 @@ export const FrequentlyAskedQuestions = () => (
 					Asked Questions
 				</EntranceText>
 			}
-			subtext="Answers to the questions we hear most about colon hydrotherapy and your visit."
+			subtext="Answers to the questions we hear most about colon hydrotherapy, our spa services and your visit."
 			links={[
-				{ label: "Getting Started", targetId: "getting-started" },
+				{ label: "What is colon hydrotherapy?", targetId: "getting-started" },
 				{ label: "Preparing for Your Visit", targetId: "preparing" },
 				{ label: "Safety & Comfort", targetId: "safety" },
 			]}
