@@ -1,6 +1,6 @@
 import { type MouseEvent, type ReactNode, useEffect, useRef } from "react";
-import { ArrowDownIcon } from "@/components/icons";
 import type { heroImageSources } from "@/lib/media";
+import { ArrowDownIcon } from "./icons";
 
 interface HeroVideoSource {
 	src: string;
@@ -14,6 +14,8 @@ type HeroMedia =
 interface HeroLink {
 	label: string;
 	targetId: string;
+	isCta?: boolean;
+	sortOrder?: number;
 }
 
 interface HeroProps {
@@ -54,7 +56,6 @@ export const Hero = ({
 	cta,
 	links,
 	size = "default",
-	hasScrollIndicator = true,
 }: HeroProps) => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -134,6 +135,8 @@ export const Hero = ({
 				className="absolute inset-0 bg-noise opacity-20 mix-blend-overlay pointer-events-none"
 				aria-hidden="true"
 			/>
+
+			{/* Links */}
 			<div
 				className={`container relative z-10 mx-auto px-5 ${CONTENT_TOP_CLASSES[size]}`}
 			>
@@ -142,29 +145,41 @@ export const Hero = ({
 				{cta && <div className="mt-5 flex gap-3">{cta}</div>}
 				{links && links.length > 0 && (
 					<div className="mt-5 flex flex-wrap gap-3">
-						{links.map((link) => (
-							<a
-								key={link.targetId}
-								href={`#${link.targetId}`}
-								onClick={scrollToTarget(link.targetId)}
-								className="border border-seafoam-100 hover:bg-seafoam-50/15 rounded-full px-5 py-2 text-center transition-hover"
-							>
-								{link.label}
-							</a>
-						))}
+						{links.map((link) => {
+							return link.isCta ? (
+								<a
+									key={link.targetId}
+									href={link.targetId}
+									className="rounded-full px-5 py-2 text-center transition-hover font-medium bg-seafoam-100 hover:bg-seafoam-200 text-ink"
+									target="_blank"
+									rel="noopener"
+								>
+									{link.label}
+								</a>
+							) : (
+								<a
+									key={link.targetId}
+									href={`#${link.targetId}`}
+									onClick={scrollToTarget(link.targetId)}
+									className="rounded-full px-5 py-2 text-center transition-hover font-medium border border-seafoam-100 hover:bg-seafoam-50/15"
+								>
+									{link.label}
+								</a>
+							);
+						})}
 					</div>
 				)}
 			</div>
-			{hasScrollIndicator && size === "default" && (
-				<button
-					type="button"
-					onClick={scrollToContent}
-					aria-label="Scroll to content"
-					className="absolute bottom-5 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-seafoam-50/15 p-2 text-seafoam-100 cursor-pointer animate-soft-bounce"
-				>
-					<ArrowDownIcon size={20} />
-				</button>
-			)}
+
+			{/* Scroll indicator */}
+			<button
+				type="button"
+				onClick={scrollToContent}
+				aria-label="Scroll to content"
+				className="absolute bottom-5 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-seafoam-50/15 p-2 md:mb-0 mb-12 text-seafoam-100 cursor-pointer animate-soft-bounce"
+			>
+				<ArrowDownIcon size={20} />
+			</button>
 		</section>
 	);
 };

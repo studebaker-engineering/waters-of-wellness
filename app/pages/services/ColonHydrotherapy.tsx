@@ -1,5 +1,6 @@
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { BOOKING_LINK } from "@/lib";
 import { heroImageSources } from "@/lib/media";
 
 const ColonHydrotherapy = () => (
@@ -16,6 +17,12 @@ const ColonHydrotherapy = () => (
 			}
 			subtext="Answers to the questions we hear most about colon hydrotherapy and your visit."
 			links={[
+				{
+					label: "Book your session",
+					targetId: BOOKING_LINK,
+					isCta: true,
+					sortOrder: 0,
+				},
 				{ label: "Getting Started", targetId: "getting-started" },
 				{ label: "Preparing for Your Visit", targetId: "preparing" },
 				{ label: "Safety & Comfort", targetId: "safety" },

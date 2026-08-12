@@ -1,4 +1,9 @@
-import { PHONE_DISPLAY, PHONE_HREF, PHONE_NUMBER } from "./contact";
+import {
+	BOOKING_LINK,
+	PHONE_DISPLAY,
+	PHONE_HREF,
+	PHONE_NUMBER,
+} from "./contact";
 import { gsap, ScrollTrigger, SplitText } from "./gsap";
 import {
 	dockPhotoSrcSet,
@@ -16,6 +21,7 @@ import {
 } from "./seo";
 
 export {
+	BOOKING_LINK,
 	dockPhotoSrcSet,
 	dockPhotoUrl,
 	gsap,

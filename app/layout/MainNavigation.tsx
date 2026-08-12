@@ -1,7 +1,7 @@
 import { href, Link, NavLink, useLocation } from "react-router";
 import { ArrowRightIcon, WatersOfWellnessIcon } from "@/components/icons";
 import { HERO_ROUTES, NAV_LINKS } from "@/config";
-import { navItemHoverClass, navLinkClassName } from "@/lib";
+import { BOOKING_LINK, navItemHoverClass, navLinkClassName } from "@/lib";
 import { MobileMenu } from "./MobileMenu";
 import { ServicesMenu } from "./ServicesMenu";
 
@@ -49,7 +49,7 @@ export const MainNavigation = () => {
 						</div>
 					</nav>
 					<a
-						href="https://watersofwellness.janeapp.com"
+						href={BOOKING_LINK}
 						target="_blank"
 						rel="noopener"
 						className="inline-flex items-center bg-seafoam-100 hover:bg-seafoam-200 text-ink rounded-full px-3 py-1 text-center transition-hover"

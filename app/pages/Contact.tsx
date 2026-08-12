@@ -1,5 +1,6 @@
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { BOOKING_LINK } from "@/lib";
 import { heroImageSources } from "@/lib/media";
 
 export const FrequentlyAskedQuestions = () => (
@@ -14,13 +15,20 @@ export const FrequentlyAskedQuestions = () => (
 					Let's get in touch.
 				</EntranceText>
 			}
-			subtext="Answers to the questions we hear most about colon hydrotherapy and your visit."
+			subtext="Reach out to rejuvenate your body and spirit at our Baltimore sanctuary, where wellness and tranquility meet."
 			links={[
-				{ label: "Getting Started", targetId: "getting-started" },
-				{ label: "Preparing for Your Visit", targetId: "preparing" },
-				{ label: "Safety & Comfort", targetId: "safety" },
+				{
+					label: "Book an appointment",
+					targetId: BOOKING_LINK,
+					isCta: true,
+					sortOrder: 0,
+				},
+				{
+					label: "Get in touch",
+					targetId: "contact-information",
+					sortOrder: 1,
+				},
 			]}
-			hasScrollIndicator={false}
 		/>
 	</>
 );
