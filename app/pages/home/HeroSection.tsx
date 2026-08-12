@@ -73,5 +73,6 @@ export const HeroSection = () => (
 				</Link>
 			</>
 		}
+		excludeScrollIndicator={true}
 	/>
 );

@@ -25,7 +25,7 @@ interface HeroProps {
 	cta?: ReactNode;
 	links?: HeroLink[];
 	size?: "large" | "default";
-	hasScrollIndicator?: boolean;
+	excludeScrollIndicator?: boolean;
 }
 
 const SIZE_CLASSES: Record<NonNullable<HeroProps["size"]>, string> = {
@@ -56,6 +56,7 @@ export const Hero = ({
 	cta,
 	links,
 	size = "default",
+	excludeScrollIndicator = false,
 }: HeroProps) => {
 	const sectionRef = useRef<HTMLElement>(null);
 	const videoRef = useRef<HTMLVideoElement>(null);
@@ -172,14 +173,16 @@ export const Hero = ({
 			</div>
 
 			{/* Scroll indicator */}
-			<button
-				type="button"
-				onClick={scrollToContent}
-				aria-label="Scroll to content"
-				className="absolute bottom-5 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-seafoam-50/15 p-2 md:mb-0 mb-12 text-seafoam-100 cursor-pointer animate-soft-bounce"
-			>
-				<ArrowDownIcon size={20} />
-			</button>
+			{!excludeScrollIndicator && (
+				<button
+					type="button"
+					onClick={scrollToContent}
+					aria-label="Scroll to content"
+					className="absolute bottom-5 left-1/2 z-10 flex h-10 w-10 -translate-x-1/2 items-center justify-center rounded-full bg-seafoam-50/15 p-2 md:mb-0 mb-12 text-seafoam-100 cursor-pointer animate-soft-bounce"
+				>
+					<ArrowDownIcon size={20} />
+				</button>
+			)}
 		</section>
 	);
 };
