@@ -1,12 +1,12 @@
-import detoxHero from "@/assets/detox-hero.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { heroImageSources } from "@/lib/media";
 
 const DetoxWraps = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: detoxHero }}
+			media={{ type: "image", sources: heroImageSources("detox") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Lymphatic Contour

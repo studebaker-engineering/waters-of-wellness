@@ -16,3 +16,30 @@ export const dockPhotoUrl = (width: number) =>
 export const dockPhotoSrcSet = DOCK_PHOTO_WIDTHS.map(
 	(width) => `${dockPhotoUrl(width)} ${width}w`,
 ).join(", ");
+
+export const HERO_IMAGE_TIERS = {
+	mobile: { widths: [750, 1500] },
+	tablet: { widths: [1024, 2048] },
+	desktop: { widths: [1920, 3840] },
+} as const;
+
+export const heroImageUrl = (
+	slug: string,
+	tier: keyof typeof HERO_IMAGE_TIERS,
+	width: number,
+) => `${MEDIA_BASE_URL}/hero-images/${slug}/${tier}-${width}w.webp`;
+
+export const heroImageSrcSet = (
+	slug: string,
+	tier: keyof typeof HERO_IMAGE_TIERS,
+) =>
+	HERO_IMAGE_TIERS[tier].widths
+		.map((width) => `${heroImageUrl(slug, tier, width)} ${width}w`)
+		.join(", ");
+
+export const heroImageSources = (slug: string) => ({
+	mobile: heroImageSrcSet(slug, "mobile"),
+	tablet: heroImageSrcSet(slug, "tablet"),
+	desktop: heroImageSrcSet(slug, "desktop"),
+	fallbackSrc: heroImageUrl(slug, "tablet", HERO_IMAGE_TIERS.tablet.widths[0]),
+});

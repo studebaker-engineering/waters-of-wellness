@@ -1,5 +1,6 @@
 import { type MouseEvent, type ReactNode, useEffect, useRef } from "react";
 import { ArrowDownIcon } from "@/components/icons";
+import type { heroImageSources } from "@/lib/media";
 
 interface HeroVideoSource {
 	src: string;
@@ -8,7 +9,7 @@ interface HeroVideoSource {
 
 type HeroMedia =
 	| { type: "video"; poster: string; sources: HeroVideoSource[] }
-	| { type: "image"; src: string };
+	| { type: "image"; sources: ReturnType<typeof heroImageSources> };
 
 interface HeroLink {
 	label: string;
@@ -104,12 +105,29 @@ export const Hero = ({
 					))}
 				</video>
 			) : (
-				<img
-					src={media.src}
-					alt=""
-					className="absolute inset-0 h-full w-full object-cover"
-					aria-hidden="true"
-				/>
+				<picture>
+					<source
+						media="(max-width: 767px)"
+						srcSet={media.sources.mobile}
+						sizes="100vw"
+					/>
+					<source
+						media="(min-width: 768px) and (max-width: 1023px)"
+						srcSet={media.sources.tablet}
+						sizes="100vw"
+					/>
+					<source
+						media="(min-width: 1024px)"
+						srcSet={media.sources.desktop}
+						sizes="100vw"
+					/>
+					<img
+						src={media.sources.fallbackSrc}
+						alt=""
+						className="absolute inset-0 h-full w-full object-cover"
+						aria-hidden="true"
+					/>
+				</picture>
 			)}
 			<div className="absolute inset-0 bg-gray-800/25" />
 			<div

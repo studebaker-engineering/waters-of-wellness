@@ -1,12 +1,12 @@
-import contactHero from "@/assets/contact-hero.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { heroImageSources } from "@/lib/media";
 
 export const FrequentlyAskedQuestions = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: contactHero }}
+			media={{ type: "image", sources: heroImageSources("contact") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Have a question?

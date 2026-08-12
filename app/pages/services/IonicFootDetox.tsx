@@ -1,12 +1,12 @@
-import ifdHero from "@/assets/ifd-hero.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { heroImageSources } from "@/lib/media";
 
 const IonicFootDetox = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: ifdHero }}
+			media={{ type: "image", sources: heroImageSources("ifd") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Ionic

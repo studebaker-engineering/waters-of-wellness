@@ -1,12 +1,12 @@
-import chtHero from "@/assets/cht-hero.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { heroImageSources } from "@/lib/media";
 
 const ColonHydrotherapy = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: chtHero }}
+			media={{ type: "image", sources: heroImageSources("cht") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Colon

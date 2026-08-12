@@ -1,7 +1,7 @@
-import faqHero from "@/assets/faq-hero.jpg";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
 import { RevealSection } from "@/components/RevealSection";
+import { heroImageSources } from "@/lib/media";
 
 const LOREM =
 	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
@@ -10,7 +10,7 @@ export const FrequentlyAskedQuestions = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: faqHero }}
+			media={{ type: "image", sources: heroImageSources("faq") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Frequently

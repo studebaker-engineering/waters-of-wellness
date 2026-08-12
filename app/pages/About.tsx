@@ -1,16 +1,16 @@
-import aboutHero from "@/assets/about-hero.jpg";
 import gina from "@/assets/gina.jpeg";
 import { BioCard } from "@/components/BioCard";
 import { BookingBanner } from "@/components/BookingBanner";
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { heroImageSources } from "@/lib/media";
 import { FactCard } from "@/pages/home/FactCard";
 
 export const About = () => (
 	<>
 		<Hero
 			size="default"
-			media={{ type: "image", src: aboutHero }}
+			media={{ type: "image", sources: heroImageSources("about") }}
 			title={
 				<EntranceText as="h1" className="md:text-6xl">
 					Welcome to <br />
