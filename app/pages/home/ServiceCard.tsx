@@ -17,7 +17,7 @@ export const ServiceCard = ({
 	>
 		<div className="flex justify-between items-center gap-3">
 			{/* Icon and text */}
-			<div className="flex items-center gap-3">
+			<div className="flex items-center gap-3 lg:h-30">
 				<div className="w-12 h-12 aspect-square bg-seafoam-100 rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
 					{icon}
 				</div>

@@ -7,7 +7,7 @@ const [colonHydrotherapy, detoxWraps, ionicFootDetox] = SERVICE_LINKS;
 
 export const ServicesSection = () => (
 	<section className="mb-10">
-		<EntranceText>Our Services</EntranceText>
+		<EntranceText>Holistic Care, Personalized to You</EntranceText>
 		<div className="grid gap-3 lg:grid-cols-3 mt-2">
 			<ServiceCard
 				title="Cleansing colon hydrotherapy"
@@ -16,19 +16,19 @@ export const ServicesSection = () => (
 				badge="New client special"
 				duration="90 minutes"
 			>
-				Refresh your system and support digestive health with calming colon
+				Refresh your system and support digestive health with personalized colon
 				hydrotherapy sessions.
 			</ServiceCard>
 
 			<ServiceCard
-				title="Revitalizing detox wraps"
+				title="Lymphatic Detox Wraps"
 				icon={<LotusIcon />}
 				to={detoxWraps.href}
-				badge="Packages available"
+				badge="New client special"
 				duration="60 minutes"
 			>
-				Experience the soothing embrace of detox body wraps that help release
-				toxins and rejuvenate the body.
+				Revitalize the body with soothing contour body wraps that help release
+				toxins and support lymphatic circulation.
 			</ServiceCard>
 
 			<ServiceCard
@@ -38,8 +38,8 @@ export const ServicesSection = () => (
 				badge="Packages Available"
 				duration="60 minutes"
 			>
-				A salt footh bath intended to pull heavy metals and environmental toxins
-				from the body via the feet through osmosis.
+				Enhance your wellness routine with a relaxing foot bath designed to
+				release toxins and promote restorative balance through osmosis.
 			</ServiceCard>
 		</div>
 	</section>

@@ -32,17 +32,18 @@ export const HeroSection = () => (
 		}}
 		title={
 			<EntranceText as="h1" className="md:text-6xl">
-				Restore Your
+				Begin Your
 				<br />
-				Digestive Balance
+				Journey to Wellness
 			</EntranceText>
 		}
 		subtext={
 			<>
-				Baltimore Maryland's premier colon hydrotherapy experts.
+				Return to a sense of balance through personalized colon hydrotherapy and
+				holistic wellness.
 				<br />
-				Twenty years of practice, FDA Approved, and focused on your journey to
-				wellness.
+				Guided by 20 years of FDA-approved practitioner care serving Baltimore,
+				Maryland.
 			</>
 		}
 		cta={

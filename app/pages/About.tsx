@@ -63,7 +63,7 @@ export const About = () => (
 									Accredited
 								</p>
 								<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-									FDA Approved
+									Clayton College
 								</span>
 							</div>
 							<div>

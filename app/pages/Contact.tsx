@@ -46,7 +46,7 @@ export const FrequentlyAskedQuestions = () => (
 				className="mx-auto bg-seafoam-50 rounded-lg p-5 lg:p-8"
 				id={ANCHOR_CONFIG.learnMore}
 			>
-				<EntranceText>Let's find your path to wellness</EntranceText>
+				<EntranceText>Begin your journey to wellness</EntranceText>
 
 				<div className="flex flex-col lg:flex-row gap-8 lg:items-center mt-3 ">
 					<div className="flex flex-col gap-5 lg:w-1/3">

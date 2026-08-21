@@ -16,12 +16,13 @@ export const AboutSection = () => (
 			>
 				<p className="font-semibold">
 					At Waters of Wellness, Gina is dedicated to guiding you on your
-					journey to wellness.
+					journey.
 				</p>
 				<p className="text-sm">
-					With a focus on nurturing both body, mind and spirit, Gina offers
-					personalized care that prioritizes your individual needs, helping you
-					achieve balance and rejuvenation.
+					Focused on nurturing the body, mind, and spirit, Gina offers
+					personalized care tailored to your individual needs and goals. With
+					thoughtful and professional guidance, you can feel informed,
+					comfortable and supported throughout your experience.
 				</p>
 				<Link
 					to="/about"
@@ -41,7 +42,7 @@ export const AboutSection = () => (
 							Accredited
 						</p>
 						<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-							FDA Approved
+							Clayton College
 						</span>
 					</div>
 					<div>

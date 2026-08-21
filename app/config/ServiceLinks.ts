@@ -7,7 +7,11 @@ export const SERVICE_LINKS: Array<LinkItem> = [
 		label: "Colon Hydrotherapy",
 		href: href("/services/colon-hydrotherapy"),
 	},
-	{ sortOrder: 1, label: "Detox Wraps", href: href("/services/detox-wraps") },
+	{
+		sortOrder: 1,
+		label: "Lymphatic Detox Wraps",
+		href: href("/services/detox-wraps"),
+	},
 	{
 		sortOrder: 2,
 		label: "Ionic Foot Detox",
