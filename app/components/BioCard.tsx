@@ -13,7 +13,7 @@ export const BioCard = ({
 	imageSrc,
 	imageAlt,
 	children,
-	tailwindBgColorClass = "bg-seafoam-50",
+	tailwindBgColorClass = "bg-seafoam-100",
 	className = "",
 }: BioCardProps) => (
 	<div

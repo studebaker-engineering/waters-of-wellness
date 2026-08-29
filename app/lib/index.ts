@@ -1,5 +1,7 @@
 import {
 	BOOKING_LINK,
+	EMAIL_ADDRESS,
+	EMAIL_HREF,
 	PHONE_DISPLAY,
 	PHONE_HREF,
 	PHONE_NUMBER,
@@ -24,6 +26,8 @@ export {
 	BOOKING_LINK,
 	dockPhotoSrcSet,
 	dockPhotoUrl,
+	EMAIL_ADDRESS,
+	EMAIL_HREF,
 	gsap,
 	heroVideoUrl,
 	MEDIA_ORIGIN,

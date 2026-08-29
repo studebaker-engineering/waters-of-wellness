@@ -47,7 +47,7 @@ export const WhySection = () => {
 				>
 					<FactCard
 						title="Gentle by design"
-						tailwindBgColorClass="bg-tidewater-100"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-start relative z-10 lg:w-3/4"
 					>
 						Filtered, temperature-regulated water is introduced gradually,
@@ -55,7 +55,7 @@ export const WhySection = () => {
 					</FactCard>
 					<FactCard
 						title="Attentive wellness"
-						tailwindBgColorClass="bg-tidewater-100"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-end"
 					>
 						Sessions are personally administered and continuously monitored,
@@ -64,7 +64,7 @@ export const WhySection = () => {
 					</FactCard>
 					<FactCard
 						title="Ancient roots, modern care"
-						tailwindBgColorClass="bg-tidewater-100"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-start"
 					>
 						With colon-cleansing documented across cultures for centuries,
