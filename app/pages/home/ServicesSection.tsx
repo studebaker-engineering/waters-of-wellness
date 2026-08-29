@@ -39,7 +39,7 @@ export const ServicesSection = () => (
 				duration="60 minutes"
 			>
 				Enhance your wellness routine with a relaxing foot bath designed to
-				release toxins and promote restorative balance through osmosis.
+				release toxins and promote balance through osmosis.
 			</ServiceCard>
 		</div>
 	</section>

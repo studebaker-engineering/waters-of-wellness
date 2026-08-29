@@ -105,7 +105,7 @@ export const MainFooter = () => {
 					{/* CTA */}
 					<div className="lg:w-72 shrink-0">
 						<p className="text-xs uppercase tracking-wide opacity-60 mb-2">
-							Ready to feel better?
+							Make space for yourself
 						</p>
 						<a
 							href={BOOKING_LINK}

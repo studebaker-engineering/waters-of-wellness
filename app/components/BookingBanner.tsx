@@ -20,7 +20,7 @@ export const BookingBanner = ({
 			<EntranceText as="h3" className="md:text-2xl text-xl font-bold max-w-4/5">
 				{title}
 			</EntranceText>
-			<p className="text-sm mt-2">{children}</p>
+			<p className="text-md mt-2">{children}</p>
 		</div>
 		<a
 			href={BOOKING_LINK}
