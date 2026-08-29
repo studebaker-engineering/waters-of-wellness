@@ -37,7 +37,7 @@ export const About = () => (
 					<BioCard
 						imageSrc={gina}
 						imageAlt="Gina R. Cunningham"
-						tailwindBgColorClass="bg-tidewater-100"
+						tailwindBgColorClass="bg-seafoam-100"
 					>
 						<div>
 							<h3 className="text-lg font-medium">Gina Cunningham, CCT</h3>
