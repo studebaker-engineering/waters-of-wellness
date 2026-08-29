@@ -2,6 +2,7 @@ import gina from "@/assets/gina.jpeg";
 import { BioCard } from "@/components/BioCard";
 import { BookingBanner } from "@/components/BookingBanner";
 import { EntranceText } from "@/components/EntranceText";
+import { GinaBioSection } from "@/components/GinaBioSection";
 import { Hero } from "@/components/Hero";
 import { heroImageSources } from "@/lib/media";
 import { FactCard } from "@/pages/home/FactCard";
@@ -32,8 +33,7 @@ export const About = () => (
 		/>
 
 		<div className="container p-5 mx-auto">
-			<section id="story" className="mb-10">
-				<EntranceText>Gina's Story</EntranceText>
+			<GinaBioSection id="story" title="Gina's Story">
 				<div className="mt-2 grid gap-3 lg:grid-cols-2 lg:items-start">
 					<BioCard
 						imageSrc={gina}
@@ -57,24 +57,6 @@ export const About = () => (
 							you in a nurturing environment where you feel comfortable and
 							supported.
 						</p>
-						<div className="mt-auto flex gap-3 pt-3">
-							<div>
-								<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-									Accredited
-								</p>
-								<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-									Clayton College
-								</span>
-							</div>
-							<div>
-								<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-									In practice
-								</p>
-								<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-									Since 2005
-								</span>
-							</div>
-						</div>
 					</BioCard>
 
 					<div className="grid gap-3 sm:grid-cols-2">
@@ -121,7 +103,7 @@ export const About = () => (
 						</FactCard>
 					</div>
 				</div>
-			</section>
+			</GinaBioSection>
 
 			<section id="mission" className="mb-10 max-w-2xl mx-auto text-center">
 				<EntranceText as="h2">Her Mission</EntranceText>

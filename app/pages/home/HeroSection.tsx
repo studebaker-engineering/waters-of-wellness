@@ -32,7 +32,7 @@ export const HeroSection = () => (
 		}}
 		title={
 			<EntranceText as="h1" className="md:text-6xl">
-				Begin Your
+				A Focused
 				<br />
 				Journey to Wellness
 			</EntranceText>
@@ -40,10 +40,10 @@ export const HeroSection = () => (
 		subtext={
 			<>
 				Return to a sense of balance through personalized colon hydrotherapy and
-				holistic wellness.
+				holistic services in Baltimore, Maryland.
 				<br />
-				Guided by 20 years of FDA-approved practitioner care serving Baltimore,
-				Maryland.
+				Guided by 20+ years of certified practitioner experience, thoughtfully
+				centered around you.
 			</>
 		}
 		cta={
