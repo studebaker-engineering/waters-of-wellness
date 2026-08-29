@@ -26,9 +26,9 @@ export const BookingBanner = ({
 			href={BOOKING_LINK}
 			target="_blank"
 			rel="noopener"
-			className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10"
+			className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10 font-medium"
 		>
-			Book now
+			Schedule your consultation
 		</a>
 		<a
 			href={PHONE_HREF}
@@ -36,7 +36,7 @@ export const BookingBanner = ({
 			rel="noopener"
 			className="lg:hidden bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover font-medium"
 		>
-			Call now
+			Call us
 		</a>
 	</section>
 );
