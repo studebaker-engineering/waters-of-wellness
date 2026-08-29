@@ -1,10 +1,12 @@
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
+import { ServiceDetails } from "@/components/ServiceDetails";
 import { BOOKING_LINK } from "@/lib";
 import { heroImageSources } from "@/lib/media";
 
 const ANCHOR_CONFIG = {
 	learnMore: "learn-more",
+	planYourVisit: "plan-your-visit",
 };
 
 const ColonHydrotherapy = () => (
@@ -28,10 +30,11 @@ const ColonHydrotherapy = () => (
 					sortOrder: 0,
 				},
 				{ label: "Learn More", targetId: ANCHOR_CONFIG.learnMore },
+				{ label: "Plan Your Visit", targetId: ANCHOR_CONFIG.planYourVisit },
 			]}
 		/>
 		<div className="container p-5 mx-auto">
-			<section className="mx-auto" id={ANCHOR_CONFIG.learnMore}>
+			<section className="mx-auto mb-10" id={ANCHOR_CONFIG.learnMore}>
 				<EntranceText>What is Colon Hydrotherapy?</EntranceText>
 				<p className="mb-5 text-lg">
 					Colon hydrotherapy, often called colonic irrigation, is a soothing
@@ -44,7 +47,7 @@ const ColonHydrotherapy = () => (
 				</p>
 
 				<EntranceText>How does it work?</EntranceText>
-				<p className="mb-5 text-lg">
+				<p className="text-lg">
 					Infusing filtered and temperature regulated water into the colon, the
 					waste is softened and loosened, resulting in evacuation through a
 					natural action called peristalsis. The inflow of water and the release
@@ -52,6 +55,27 @@ const ColonHydrotherapy = () => (
 					removal of waste encourages better colon function and elimination.
 				</p>
 			</section>
+
+			<ServiceDetails
+				id={ANCHOR_CONFIG.planYourVisit}
+				duration="NN–NN minutes"
+				investment="Starting at $NNN"
+				deposit="$NNN"
+				preparation={[
+					"Avoid a heavy meal in the 2 hours before your appointment.",
+					"Drink plenty of water throughout the day.",
+					"Wear comfortable, easy-to-remove clothing.",
+					"Arrive 10 minutes early to settle in before your session.",
+				]}
+				disclaimer={
+					<>
+						Colon hydrotherapy is not a substitute for medical care. Please let
+						us know about any medical conditions, recent surgeries, or
+						medications before your visit, as certain conditions may make this
+						service unsuitable. When in doubt, check with your physician first.
+					</>
+				}
+			/>
 		</div>
 	</>
 );
