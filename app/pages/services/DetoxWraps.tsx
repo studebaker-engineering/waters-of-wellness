@@ -1,6 +1,7 @@
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
-import { ServiceDetails } from "@/components/services";
+import { ServiceDetails, ServiceQuestions } from "@/components/services";
+import { colonHydrotherapyQuestions } from "@/config/services";
 import { BOOKING_LINK } from "@/lib";
 import { heroImageSources } from "@/lib/media";
 
@@ -64,12 +65,17 @@ const DetoxWraps = () => (
 				]}
 				disclaimer={
 					<>
-						Colon hydrotherapy is not a substitute for medical care. Please let
-						us know about any medical conditions, recent surgeries, or
+						Lymphatic detox wraps are not a substitute for medical care. Please
+						let us know about any medical conditions, recent surgeries, or
 						medications before your visit, as certain conditions may make this
 						service unsuitable. When in doubt, check with your physician first.
 					</>
 				}
+			/>
+
+			<ServiceQuestions
+				questions={colonHydrotherapyQuestions.questions}
+				serviceLinkType={colonHydrotherapyQuestions.serviceLinkType}
 			/>
 		</div>
 	</>

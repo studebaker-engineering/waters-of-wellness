@@ -6,7 +6,7 @@ export const ServiceQuestions = ({
 	serviceLinkType,
 	questions,
 }: ServiceQuestionsProps) => (
-	<section>
+	<section id="common-questions">
 		<div className="p-5 bg-seafoam-100/25 hover:bg-seafoam-100 transition-hover rounded-lg">
 			<EntranceText as="h3" className="mb-3">
 				Common Questions

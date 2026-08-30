@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
 import { EntranceText } from "@/components/EntranceText";
-import { ArrowRightIcon, WatersOfWellnessIcon } from "@/components/icons";
+import { ArrowRightIcon, CheckIcon } from "@/components/icons";
 import { BOOKING_LINK } from "@/lib";
+import { ServiceOptionCard } from "./ServiceOptionCard";
 
 interface ServiceDetailsProps {
 	id: string;
@@ -18,44 +19,6 @@ interface ServiceOption {
 	price: number;
 	deposit: number;
 }
-
-const CheckIcon = () => (
-	<svg
-		fill="none"
-		stroke="currentColor"
-		strokeLinecap="round"
-		strokeLinejoin="round"
-		strokeWidth="2"
-		className="w-5 h-5 shrink-0 mt-0.5 text-tidewater-200"
-		viewBox="0 0 24 24"
-	>
-		<title>Included</title>
-		<path d="M5 13l4 4L19 7" />
-	</svg>
-);
-
-interface ServiceOptionCardProps {
-	title: string;
-	value: string;
-}
-
-const ServiceOptionCard = ({ title, value }: ServiceOptionCardProps) => (
-	<div className="relative overflow-hidden bg-seafoam-100 rounded-lg p-3 lg:p-5 text-center">
-		<div className="absolute inset-0 flex items-center justify-center">
-			<WatersOfWellnessIcon
-				size={96}
-				tailwindFillColorClass="fill-seafoam-300/15 h-auto"
-			/>
-		</div>
-		{/* Stats */}
-		<div className="relative z-10">
-			<span className="text-xs uppercase tracking-wide opacity-60 block">
-				{title}
-			</span>
-			<span className="text-md lg:text-2xl font-medium">{value}</span>
-		</div>
-	</div>
-);
 
 export const ServiceDetails = ({
 	id,
@@ -110,7 +73,10 @@ export const ServiceDetails = ({
 					<ul className="flex flex-col gap-3">
 						{preparation.map((item) => (
 							<li key={item} className="flex items-start gap-2 text-lg">
-								<CheckIcon />
+								<CheckIcon
+									size={20}
+									tailwindFillColorClass="shrink-0 mt-0.5 text-tidewater-200"
+								/>
 								<span>{item}</span>
 							</li>
 						))}

@@ -128,7 +128,7 @@ export const FrequentlyAskedQuestions = () => (
 				<section
 					key={section.id}
 					id={section.id}
-					className="mx-auto mb-12 px-5 py-10 rounded-lg bg-seafoam-100"
+					className="mx-auto mb-12 px-5 py-10 rounded-lg bg-seafoam-100/50"
 				>
 					<h2 className="text-2xl lg:text-3xl">{section.title}</h2>
 					<div>

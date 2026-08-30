@@ -8,6 +8,7 @@ import { heroImageSources } from "@/lib/media";
 const ANCHOR_CONFIG = {
 	learnMore: "learn-more",
 	planYourVisit: "plan-your-visit",
+	commonQuestions: "common-questions",
 };
 
 const ColonHydrotherapy = () => (
@@ -22,7 +23,7 @@ const ColonHydrotherapy = () => (
 					Hydrotherapy
 				</EntranceText>
 			}
-			subtext="Answers to the questions we hear most about colon hydrotherapy and your visit."
+			subtext="Experience a gentle, water-based colon cleansing experience paced around your comfort and privacy."
 			links={[
 				{
 					label: "Book your session",
@@ -32,6 +33,7 @@ const ColonHydrotherapy = () => (
 				},
 				{ label: "Learn More", targetId: ANCHOR_CONFIG.learnMore },
 				{ label: "Plan Your Visit", targetId: ANCHOR_CONFIG.planYourVisit },
+				{ label: "Common Questions", targetId: ANCHOR_CONFIG.commonQuestions },
 			]}
 		/>
 		<div className="container p-5 mx-auto">
