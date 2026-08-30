@@ -1,6 +1,6 @@
 import { EntranceText } from "@/components/EntranceText";
 import { Hero } from "@/components/Hero";
-import { ServiceDetails } from "@/components/ServiceDetails";
+import { ServiceDetails } from "@/components/services";
 import { BOOKING_LINK } from "@/lib";
 import { heroImageSources } from "@/lib/media";
 
@@ -53,9 +53,9 @@ const DetoxWraps = () => (
 
 			<ServiceDetails
 				id={ANCHOR_CONFIG.planYourVisit}
-				duration="NN–NN minutes"
-				investment="Starting at $NNN"
-				deposit="$NNN"
+				description={
+					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+				}
 				preparation={[
 					"Avoid a heavy meal in the 2 hours before your appointment.",
 					"Drink plenty of water throughout the day.",
