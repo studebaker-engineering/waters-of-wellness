@@ -1,7 +1,7 @@
 import gina from "@/assets/gina.jpeg";
 import { BioCard } from "@/components/BioCard";
-import { BookingBanner } from "@/components/BookingBanner";
 import { EntranceText } from "@/components/EntranceText";
+import { GinaBioSection } from "@/components/GinaBioSection";
 import { Hero } from "@/components/Hero";
 import { heroImageSources } from "@/lib/media";
 import { FactCard } from "@/pages/home/FactCard";
@@ -26,121 +26,86 @@ export const About = () => (
 				</>
 			}
 			links={[
-				{ label: "Gina's Story", targetId: "story" },
-				{ label: "Her Mission", targetId: "mission" },
+				{ label: "Meet Gina", targetId: "meet-gina" },
+				{ label: "Our Approach", targetId: "our-approach" },
 			]}
 		/>
 
 		<div className="container p-5 mx-auto">
-			<section id="story" className="mb-10">
-				<EntranceText>Gina's Story</EntranceText>
+			<GinaBioSection id="meet-gina" title="Meet Gina">
 				<div className="mt-2 grid gap-3 lg:grid-cols-2 lg:items-start">
 					<BioCard
 						imageSrc={gina}
 						imageAlt="Gina R. Cunningham"
-						tailwindBgColorClass="bg-tidewater-100"
+						tailwindBgColorClass="bg-seafoam-100"
 					>
 						<div>
 							<h3 className="text-lg font-medium">Gina Cunningham, CCT</h3>
-							<p className="text-sm opacity-70">Colon Hydrotherapist</p>
+							<p className="text-sm opacity-70">
+								Certified Colon Hydrotherapist
+							</p>
 						</div>
 						<p className="text-sm">
-							A 25-year wellness industry veteran and colon hydrotherapist with
-							over 20 years of experience, Gina's own health transformation
-							through herbal detoxification led her to pursue formal training,
-							completing her Colon Hydrotherapy certification from St. John's
-							Academy of Natural Healing and Sciences in 2005.
+							Gina’s path to colon hydrotherapy began through the search for a
+							more holistic approach to her own well-being. She pursued formal
+							training and earned her colon hydrotherapy certification from St.
+							John’s Academy of Natural Healing and Sciences in 2005, dedicating
+							a lasting commitment to the practice.
 						</p>
 						<p className="text-sm">
-							Waters of Wellness was born from her deep passion for a holistic,
-							patient-centered approach to wellness, where the focus stays on
-							you in a nurturing environment where you feel comfortable and
-							supported.
+							Since then, she has built her career around creating an experience
+							where informed guidance, genuine connection, and attentive care is
+							tailored to the individual.
 						</p>
-						<div className="mt-auto flex gap-3 pt-3">
-							<div>
-								<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-									Accredited
-								</p>
-								<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-									Clayton College
-								</span>
-							</div>
-							<div>
-								<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-									In practice
-								</p>
-								<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-									Since 2005
-								</span>
-							</div>
-						</div>
 					</BioCard>
 
-					<div className="grid gap-3 sm:grid-cols-2">
-						<FactCard
-							title="Certified since 2005"
-							tailwindBgColorClass="bg-linen-100"
-						>
-							Colon Hydrotherapy certification from St. John's Academy of
-							Natural Healing and Sciences, plus advanced closed-system
-							techniques from industry leaders.
+					<div className="grid gap-3 sm:grid-cols-2 [&>.fact-card:nth-child(odd)]:bg-linen-100 [&>.fact-card:nth-child(even)]:bg-seafoam-100 sm:[&>.fact-card:nth-child(4n+1)]:bg-linen-100! sm:[&>.fact-card:nth-child(4n)]:bg-linen-100! sm:[&>.fact-card:nth-child(4n+2)]:bg-seafoam-100! sm:[&>.fact-card:nth-child(4n+3)]:bg-seafoam-100!">
+						<FactCard title="Certification">
+							Colon Hydrotherapy certification from St. John’s Academy of
+							Natural Healing and Sciences, completed in 2005.
 						</FactCard>
-						<FactCard
-							title="Holistic nutrition"
-							tailwindBgColorClass="bg-seafoam-100"
-						>
+						<FactCard title="Education">
 							Bachelor of Science in Holistic Nutrition from Clayton College of
-							Natural Health, with specialized training in candida, parasites,
-							and heavy metal detox protocols.
+							Natural Health.
 						</FactCard>
-						<FactCard
-							title="Reiki attunement"
-							tailwindBgColorClass="bg-seafoam-100"
-						>
-							Reiki attunement is integrated into every treatment, supporting
-							the body, mind, and spirit together.
+						<FactCard title="Advanced Training">
+							Trained in detoxification and cleansing protocols through gut
+							health expert Brenda Watson, with Closed-system training through
+							practitioners Christina Sharp and Argo Duenas.
 						</FactCard>
-						<FactCard title="Mentorship" tailwindBgColorClass="bg-linen-100">
-							Mentored by wellness authorities including Andrew Weil and Paul
-							Stamets, with regional management experience at Renew Life.
+
+						<FactCard title="Professional Associations">
+							Active member of the International Association for Colon
+							Hydrotherapy (I-ACT) since 2005, supporting continued education
+							and connection to professional standards.
 						</FactCard>
-						<FactCard
-							title="Professional association"
-							tailwindBgColorClass="bg-linen-100"
-						>
-							Active member of the International Association of Colon
-							Hydrotherapy since 2005.
+						<FactCard title="Reiki Attunement">
+							Integrative Reiki-attuned treatment, using the ancient healing
+							modality to support intuitive approach in client care.
 						</FactCard>
-						<FactCard
-							title="Personalized care"
-							tailwindBgColorClass="bg-seafoam-100"
-						>
-							Every session is tailored to your individual needs, helping you
-							achieve balance and rejuvenation at your own pace.
+						<FactCard title="Digestive Care Education">
+							Served as a Digestive Care Specialist regionally with Renew Life,
+							delivering training and education focused on digestive wellness.
 						</FactCard>
 					</div>
 				</div>
-			</section>
+			</GinaBioSection>
 
-			<section id="mission" className="mb-10 max-w-2xl mx-auto text-center">
-				<EntranceText as="h2">Her Mission</EntranceText>
-				<p className="font-roca text-xl mt-3">
-					&ldquo;At Waters of Wellness, the focus is on you.&rdquo;
-				</p>
-				<p className="text-sm opacity-70 mt-3">
-					Gina is dedicated to creating a nurturing environment where you can
-					feel comfortable and supported, every step of your wellness journey.
-				</p>
+			<section id="our-approach">
+				<div className="mb-10 mx-auto w-fit p-5 bg-linen-100 rounded-lg text-center">
+					<EntranceText as="h2">Our Approach</EntranceText>
+					<p className="font-roca text-xl">
+						Whole-person care begins with understanding the individual.
+					</p>
+					<p className="text-md opacity-70">
+						Dedicated to creating a calm, supportive environment, Waters of
+						Wellness is focused on you.
+						<br />
+						Every experience is grounded in genuine connection and approached
+						with comfort to help shape your journey.
+					</p>
+				</div>
 			</section>
-
-			<BookingBanner
-				title="Let's start your wellness journey together"
-				className="mb-10"
-			>
-				Reach out to rejuvenate your body and spirit at our Baltimore sanctuary
-				where wellness and tranquility meet.
-			</BookingBanner>
 		</div>
 	</>
 );

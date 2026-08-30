@@ -12,7 +12,7 @@ export const ServiceCard = ({
 }: ServiceCardConfig) => (
 	<Link
 		to={to}
-		className="group h-full bg-linen-100 hover:bg-linen-150 transition-colors rounded-lg p-3 flex flex-col gap-3"
+		className="group h-full bg-linen-100 hover:bg-linen-150/70 transition-colors rounded-lg p-3 flex flex-col gap-3"
 		viewTransition
 	>
 		<div className="flex justify-between items-center gap-3">
@@ -39,7 +39,7 @@ export const ServiceCard = ({
 			{/* Duration and price */}
 			<div className="flex justify-between items-center text-sm">
 				<span>{duration}</span>
-				<span className="bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
+				<span className="bg-tidewater-200 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
 					{badge}
 				</span>
 			</div>

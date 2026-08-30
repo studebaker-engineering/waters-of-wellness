@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { GinaCredentialBadges } from "@/components/GinaCredentialBadges";
 
 interface BioCardProps {
 	imageSrc: string;
@@ -12,7 +13,7 @@ export const BioCard = ({
 	imageSrc,
 	imageAlt,
 	children,
-	tailwindBgColorClass = "bg-seafoam-50",
+	tailwindBgColorClass = "bg-seafoam-100",
 	className = "",
 }: BioCardProps) => (
 	<div
@@ -25,6 +26,9 @@ export const BioCard = ({
 				className="w-full aspect-4/3 lg:aspect-auto lg:h-full object-cover rounded-lg"
 			/>
 		</div>
-		<div className="w-full lg:w-1/2 flex flex-col gap-2">{children}</div>
+		<div className="w-full lg:w-1/2 flex flex-col gap-2">
+			{children}
+			<GinaCredentialBadges />
+		</div>
 	</div>
 );

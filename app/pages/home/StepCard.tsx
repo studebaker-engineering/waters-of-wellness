@@ -9,10 +9,10 @@ interface StepCardProps {
 
 export const StepCard = ({ step, title, children }: StepCardProps) => (
 	<div className="group relative z-10 flex flex-col items-center gap-3 text-center">
-		<div className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-tidewater-200 ring-4 ring-linen-50 shadow-sm flex items-center justify-center overflow-hidden transition-transform duration-300 ease-out group-hover:scale-110">
+		<div className="relative w-16 h-16 lg:w-20 lg:h-20 rounded-full bg-seafoam-200 ring-4 ring-linen-50 shadow-sm flex items-center justify-center overflow-hidden transition-transform duration-300 ease-out group-hover:scale-110">
 			<WatersOfWellnessIcon
 				size={40}
-				tailwindFillColorClass="fill-tidewater-100/10 absolute lg:size-15"
+				tailwindFillColorClass="fill-seafoam-100/50 absolute lg:size-15"
 			/>
 			<span className="relative font-roca text-2xl lg:text-3xl leading-none text-tidewater-900 translate-y-[0.08em]">
 				{step}

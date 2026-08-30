@@ -3,14 +3,14 @@ import type { ReactNode } from "react";
 interface FactCardProps {
 	title: string;
 	children: ReactNode;
-	tailwindBgColorClass: string;
+	tailwindBgColorClass?: string;
 	className?: string;
 }
 
 export const FactCard = ({
 	title,
 	children,
-	tailwindBgColorClass,
+	tailwindBgColorClass = "",
 	className = "",
 }: FactCardProps) => (
 	<div

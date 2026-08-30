@@ -46,38 +46,39 @@ export const WhySection = () => {
 					className="w-full lg:w-1/2 flex flex-col gap-3 justify-center lg:-ml-12"
 				>
 					<FactCard
-						title="Ancient roots"
-						tailwindBgColorClass="bg-tidewater-100"
+						title="Gentle by design"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-start relative z-10 lg:w-3/4"
 					>
-						Colonics have been documented as far back as 1500 BCE amongst
-						Egyptian physicians, throughout ancient Rome and all the way to
-						modern times under modern medical practice.
+						Filtered, temperature-regulated water is introduced gradually,
+						creating a controlled and carefully paced cleansing experience.
 					</FactCard>
 					<FactCard
-						title="Embraced across cultures"
-						tailwindBgColorClass="bg-tidewater-100"
+						title="Attentive wellness"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-end"
 					>
-						Hippocrates recommended enemas regularly, Avicenna praised them
-						across the Arab world, and Ayurvedic surgeons in India were
-						describing rectal instruments as early as the 6th century BCE.
+						Sessions are personally administered and continuously monitored,
+						offering guided practitioner support that allows the experience to
+						be adjusted around comfort and individual response.
 					</FactCard>
 					<FactCard
-						title="Held to modern standards"
-						tailwindBgColorClass="bg-tidewater-100"
+						title="Ancient roots, modern care"
+						tailwindBgColorClass="bg-seafoam-100"
 						className="w-4/5 self-start"
 					>
-						Today's colon hydrotherapy relies on FDA-regulated equipment with
-						sterile, single-use tubing for every session, administered only by
-						certified therapists trained in safe practice.
+						With colon-cleansing documented across cultures for centuries,
+						hydrotherapy honors a longstanding practice grounded in tradition
+						with modern health standards. Professional guidance relies on
+						FDA-regulated equipment administered by certified practitioners,
+						ensuring your safety and privacy.
 					</FactCard>
 				</div>
 			</div>
 
-			<BookingBanner title="Start with a call" className="mt-5">
-				Reach out to rejuvenate your body and spirit at our Baltimore sanctuary
-				where wellness and tranquility meet.
+			<BookingBanner title="Have questions?" className="mt-5">
+				Get the clarity you need to feel comfortable and informed. Reach out
+				with your questions and find the right place to begin.
 			</BookingBanner>
 		</section>
 	);

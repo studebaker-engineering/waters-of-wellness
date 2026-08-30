@@ -1,13 +1,12 @@
 import { Link } from "react-router";
 import gina from "@/assets/gina.jpeg";
 import { BioCard } from "@/components/BioCard";
-import { EntranceText } from "@/components/EntranceText";
+import { GinaBioSection } from "@/components/GinaBioSection";
 import { ArrowRightIcon } from "@/components/icons";
 import { TestimonialCard } from "./TestimonialCard";
 
 export const AboutSection = () => (
-	<section className="mb-10">
-		<EntranceText>Meet Gina</EntranceText>
+	<GinaBioSection title="Meet Gina">
 		<div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:items-start mt-2">
 			<BioCard
 				imageSrc={gina}
@@ -36,24 +35,6 @@ export const AboutSection = () => (
 						<ArrowRightIcon size={16} tailwindFillColorClass="text-ink" />
 					</span>
 				</Link>
-				<div className="mt-auto flex gap-3 pt-3">
-					<div>
-						<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-							Accredited
-						</p>
-						<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-							Clayton College
-						</span>
-					</div>
-					<div>
-						<p className="text-xs font-medium uppercase tracking-wide opacity-60">
-							In practice
-						</p>
-						<span className="inline-block mt-1 bg-seafoam-100 text-ink rounded-full px-2 py-0.5 text-xs font-medium">
-							Since 2005
-						</span>
-					</div>
-				</div>
 			</BioCard>
 			<div className="col-span-2 flex flex-col gap-3">
 				<TestimonialCard reviewerName="Tiffany F.">
@@ -75,5 +56,5 @@ export const AboutSection = () => (
 				</TestimonialCard>
 			</div>
 		</div>
-	</section>
+	</GinaBioSection>
 );

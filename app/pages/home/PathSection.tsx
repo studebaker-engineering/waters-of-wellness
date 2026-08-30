@@ -9,16 +9,18 @@ export const PathSection = () => (
 		<div className="relative mt-8 grid gap-8 lg:grid-cols-3 lg:gap-6">
 			<div className="hidden lg:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-tidewater-200" />
 
-			<StepCard step={1} title="Book your evaluation">
-				Schedule a personal consultation to get acquainted.
+			<StepCard step={1} title="Get connected">
+				Schedule a consultation to discuss goals, ask questions, and feel
+				confident about what to expect.
 			</StepCard>
 
 			<StepCard step={2} title="Personalized care">
-				Partner with Gina to create your unique wellness plan.
+				Create a unique wellness plan that best supports your needs.
 			</StepCard>
 
-			<StepCard step={3} title="Find renewal">
-				Experience relief and boost your confidence.
+			<StepCard step={3} title="Find your rhythm">
+				Settle into a comfortable routine at a pace that evolves alongside your
+				needs and goals.
 			</StepCard>
 		</div>
 	</section>

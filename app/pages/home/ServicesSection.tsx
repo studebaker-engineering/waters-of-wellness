@@ -11,7 +11,7 @@ export const ServicesSection = () => (
 		<div className="grid gap-3 lg:grid-cols-3 mt-2">
 			<ServiceCard
 				title="Cleansing colon hydrotherapy"
-				icon={<MeditationIcon />}
+				icon={<MeditationIcon tailwindFillColorClass="fill-seafoam-300" />}
 				to={colonHydrotherapy.href}
 				badge="New client special"
 				duration="90 minutes"
@@ -22,7 +22,7 @@ export const ServicesSection = () => (
 
 			<ServiceCard
 				title="Lymphatic Detox Wraps"
-				icon={<LotusIcon />}
+				icon={<LotusIcon tailwindFillColorClass="fill-seafoam-300" />}
 				to={detoxWraps.href}
 				badge="New client special"
 				duration="60 minutes"
@@ -33,13 +33,13 @@ export const ServicesSection = () => (
 
 			<ServiceCard
 				title="Ionic foot detox"
-				icon={<SparkleIcon />}
+				icon={<SparkleIcon tailwindFillColorClass="fill-seafoam-300" />}
 				to={ionicFootDetox.href}
 				badge="Packages Available"
 				duration="60 minutes"
 			>
 				Enhance your wellness routine with a relaxing foot bath designed to
-				release toxins and promote restorative balance through osmosis.
+				release toxins and promote balance through osmosis.
 			</ServiceCard>
 		</div>
 	</section>

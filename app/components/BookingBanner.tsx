@@ -20,15 +20,15 @@ export const BookingBanner = ({
 			<EntranceText as="h3" className="md:text-2xl text-xl font-bold max-w-4/5">
 				{title}
 			</EntranceText>
-			<p className="text-sm mt-2">{children}</p>
+			<p className="text-md mt-2">{children}</p>
 		</div>
 		<a
 			href={BOOKING_LINK}
 			target="_blank"
 			rel="noopener"
-			className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10"
+			className="hidden lg:inline bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover lg:shrink-0 lg:px-10 font-medium"
 		>
-			Book now
+			Schedule your consultation
 		</a>
 		<a
 			href={PHONE_HREF}
@@ -36,7 +36,7 @@ export const BookingBanner = ({
 			rel="noopener"
 			className="lg:hidden bg-tidewater-200 hover:bg-tidewater-200/75 text-ink rounded-full px-5 py-3 text-center transition-hover font-medium"
 		>
-			Call now
+			Call us
 		</a>
 	</section>
 );
