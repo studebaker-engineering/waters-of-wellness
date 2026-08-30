@@ -89,7 +89,7 @@ export const ServiceDetails = ({
 					<h3 className="text-xs uppercase tracking-wide opacity-60 font-semibold mb-2">
 						Health note
 					</h3>
-					<p className="text-md">{disclaimer}</p>
+					<div className="text-md">{disclaimer}</div>
 				</div>
 			</div>
 		</section>
