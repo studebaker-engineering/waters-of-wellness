@@ -45,7 +45,7 @@ const FAQ_SECTIONS: FaqSection[] = [
 			"Should I eat before my appointment?",
 			"What should I drink beforehand?",
 			"What should I expect afterward?",
-			"Can I return to normal activities?",
+			"When can I return to normal activities?",
 			"Are there any aftercare recommendations?",
 		],
 	},
@@ -125,7 +125,11 @@ export const FrequentlyAskedQuestions = () => (
 		/>
 		<div className="container p-5 mx-auto">
 			{FAQ_SECTIONS.map((section) => (
-				<section key={section.id} id={section.id} className="mx-auto mb-12">
+				<section
+					key={section.id}
+					id={section.id}
+					className="mx-auto mb-12 px-5 py-10 rounded-lg bg-seafoam-100"
+				>
 					<h2 className="text-2xl lg:text-3xl">{section.title}</h2>
 					<div>
 						{section.questions.map((question) => (

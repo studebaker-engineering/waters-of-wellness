@@ -60,7 +60,7 @@ export const FrequentlyAskedQuestions = () => (
 		/>
 		<div className="container p-5 mx-auto">
 			<section
-				className="mx-auto bg-seafoam-50 rounded-lg p-5 lg:p-8 mb-10"
+				className="mx-auto bg-seafoam-100 rounded-lg p-5 lg:p-8 mb-10"
 				id={ANCHOR_CONFIG.learnMore}
 			>
 				<EntranceText>Contact Waters of Wellness</EntranceText>
@@ -118,12 +118,12 @@ export const FrequentlyAskedQuestions = () => (
 						</nav>
 					</div>
 
-					<hr className="border-seafoam-100 lg:border-t-0 lg:border-l lg:self-stretch lg:h-auto" />
+					<hr className="border-seafoam-200 lg:border-t-0 lg:border-l lg:self-stretch lg:h-auto" />
 
 					<div className="flex flex-col gap-5 text-lg lg:w-2/3">
 						<p>
 							For more information, feel free to reach out by phone or email.
-							Inquiries are reviewed during business hours; please allow [TBD
+							Inquiries are reviewed during business hours: please allow [TBD
 							timeframe] for a response.
 						</p>
 						<p>
