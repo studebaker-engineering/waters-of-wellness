@@ -22,7 +22,7 @@ const DetoxWraps = () => (
 					Body Wraps
 				</EntranceText>
 			}
-			subtext="Answers to the questions we hear most about detoxifying lymphatic contour wraps and your visit."
+			subtext="A restorative body treatment that combines gentle compression with attentive care for a refreshed, contoured feeling."
 			links={[
 				{
 					label: "Book your session",
@@ -36,19 +36,15 @@ const DetoxWraps = () => (
 		/>
 		<div className="container p-5 mx-auto">
 			<section className="mx-auto mb-10" id={ANCHOR_CONFIG.learnMore}>
-				<EntranceText>What is a Lymphatic Contour Body Wrap?</EntranceText>
+				<EntranceText>What is a Lymphatic Detox Wrap?</EntranceText>
 				<p className="mb-5 text-lg">
-					Detox wraps cleanse the liquid waste system in your body, better known
-					as your Lymphatic system. It is also referred to as "The River of
-					Life". This system collects any waste materials in the tissues and
-					produces anti-bodies to fight infections.
-				</p>
-				<p className="mb-5 text-lg">
-					It aids in the removal of cellulite by softening, breaking down and
-					freeing trapped toxins and waste materials in the connective tissue
-					through normal body function. The body contour wrap stimulates the
-					lymphatic system to the circulatory system, then the liver and kidneys
-					filter out toxins to be eliminated.
+					A lymphatic contour body wrap is a non-invasive wellness treatment in
+					which the body is carefully wrapped, creating consistent compression
+					to filter out toxins through the body’s lymphatic system. Aiding in
+					the removal of cellulite, this system produces anti-bodies to fight
+					infections from the lymphatic system to the circulatory system,
+					followed by the liver and kidneys natural filtering of toxins to be
+					eliminated.
 				</p>
 			</section>
 
