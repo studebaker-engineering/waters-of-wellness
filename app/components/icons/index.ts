@@ -5,6 +5,7 @@ import { CheckIcon } from "./CheckIcon";
 import { LotusIcon } from "./LotusIcon";
 import { MeditationIcon } from "./MeditationIcon";
 import { SparkleIcon } from "./SparkleIcon";
+import { ToggleIcon } from "./ToggleIcon";
 import { WatersOfWellnessIcon } from "./WatersOfWellnessIcon";
 
 export {
@@ -15,5 +16,6 @@ export {
 	LotusIcon,
 	MeditationIcon,
 	SparkleIcon,
+	ToggleIcon,
 	WatersOfWellnessIcon,
 };

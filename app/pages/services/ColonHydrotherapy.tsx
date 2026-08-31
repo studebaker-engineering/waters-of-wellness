@@ -8,7 +8,6 @@ import { heroImageSources } from "@/lib/media";
 const ANCHOR_CONFIG = {
 	learnMore: "learn-more",
 	planYourVisit: "plan-your-visit",
-	commonQuestions: "common-questions",
 };
 
 const ColonHydrotherapy = () => (
@@ -31,9 +30,7 @@ const ColonHydrotherapy = () => (
 					isCta: true,
 					sortOrder: 0,
 				},
-				{ label: "Learn More", targetId: ANCHOR_CONFIG.learnMore },
 				{ label: "Plan Your Visit", targetId: ANCHOR_CONFIG.planYourVisit },
-				{ label: "Common Questions", targetId: ANCHOR_CONFIG.commonQuestions },
 			]}
 		/>
 		<div className="container p-5 mx-auto">
@@ -62,30 +59,31 @@ const ColonHydrotherapy = () => (
 					"Wear comfortable, easy-to-remove clothing.",
 					"Arrive 10 minutes early to settle in before your session.",
 				]}
-				description={
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-				}
+				description="Explore our range of colon hydrotherapy services and answer commonly asked questions."
 				serviceOptions={[
 					{
-						title: "Initial Colon Hydrotherapy Session",
-						subtitle: "First time session, including consultation.",
+						title: "Initial Session",
+						subtitle:
+							"For first-time clients; includes consultation, intake review, and an introduction to the process.",
 						duration: 90,
 						price: 160,
 						deposit: 80,
 					},
 					{
-						title: "90 Minute Follow-Up Session",
-						subtitle: "Extended treatment for existing patients.",
-						duration: 90,
-						price: 160,
-						deposit: 80,
-					},
-					{
-						title: "60 Minute Follow-Up Session",
-						subtitle: "Treatment for existing patients.",
+						title: "Standard Follow-Up",
+						subtitle:
+							"A standard appointment for returning clients familiar with the process.",
 						duration: 60,
 						price: 140,
 						deposit: 70,
+					},
+					{
+						title: "Extended Follow-Up",
+						subtitle:
+							"A longer appointment for returning clients who prefer additional time.",
+						duration: 90,
+						price: 160,
+						deposit: 80,
 					},
 				]}
 				disclaimer={

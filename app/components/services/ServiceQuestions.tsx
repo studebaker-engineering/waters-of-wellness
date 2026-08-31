@@ -1,22 +1,29 @@
 import type { ServiceQuestionsProps } from "@/types";
 import { EntranceText } from "../EntranceText";
+import { RevealSection } from "../RevealSection";
 import { ServicesFAQLink } from "./ServicesFAQLink";
 
 export const ServiceQuestions = ({
 	serviceLinkType,
 	questions,
 }: ServiceQuestionsProps) => (
-	<section id="common-questions">
-		<div className="p-5 bg-seafoam-100/25 hover:bg-seafoam-100 transition-hover rounded-lg">
-			<EntranceText as="h3" className="mb-3">
+	<section>
+		<div className="p-5 bg-seafoam-100/25 rounded-lg">
+			<EntranceText as="h3" className="text-md">
 				Common Questions
 			</EntranceText>
-			{questions.map((question) => (
-				<div key={question.title}>
-					<h4 className="font-medium">{question.title}</h4>
-					<p className="text-lg mb-5">{question.answer}</p>
-				</div>
-			))}
+			<div className="mb-5">
+				{questions.map((question) => (
+					<RevealSection
+						key={question.title}
+						title={question.title}
+						id={question.answer}
+						variant="small"
+					>
+						<p>{question.answer}</p>
+					</RevealSection>
+				))}
+			</div>
 
 			<ServicesFAQLink serviceLinkType={serviceLinkType} />
 		</div>
