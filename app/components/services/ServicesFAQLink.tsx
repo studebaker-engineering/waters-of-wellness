@@ -20,7 +20,7 @@ export const ServicesFAQLink = ({ serviceLinkType }: ServicesFAQLinkProps) => {
 
 	return (
 		<>
-			<h4 className="font-normal">Still have questions?</h4>
+			<h4 className="font-normal lg:text-xl text-lg">Still have questions?</h4>
 			<p className="text-lg">
 				Explore the{" "}
 				<Link
